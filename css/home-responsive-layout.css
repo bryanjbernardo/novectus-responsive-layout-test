@@ -1,0 +1,325 @@
+@media screen and (min-width: 2560px) {
+    .product-group {
+        font-size: 18px;
+        min-height: 40vh;
+    }
+}
+
+
+
+@media screen and (min-width: 1920px) {
+    .product-group {
+        font-size: 16px; /* Standard Large Desktops  */
+        min-height: 32vh;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+    .product-group {
+        font-size: 15px; /* Medium Desktops  */
+        min-height: 36vh;
+        max-height: 37.5vh;
+    }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) and (orientation: landscape) {
+    .product-group {
+        font-size: 14.5px; /* Small Desktops on landscape */
+        min-height: 32vh;
+        /* max-height: 34vh; */
+    }
+}
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1279px)  {
+    .product-group {
+        font-size: 14px; 
+        min-height: 28vh;
+        max-height: 60svh;
+    }
+}
+/*FHD-QHD phones*/
+@media screen and (min-width: 1080px) and (orientation: portrait) {
+    .product-group {
+        font-size: 22px;
+        min-height: 24svh;
+    }
+}
+
+
+
+/*gap before tablet breakpoint (General range for medium phones )*/
+@media screen and (min-width: 414px) and (max-width: 767px) {
+    .atlas-layer {
+        background-position:calc(30%);
+    }
+    .landing-content {
+        padding: 0;
+        margin: 0 10%;
+    }
+    .landing-text {
+        top: 24%;
+        font-size: 10px;
+        align-items: end;
+
+        gap: 2.8em;
+    }
+    .text-content {
+        max-width: 70vw;
+        gap: 2.4em;
+    }
+    .landing-text .learn-more-btn {
+       width: 60%;
+    }
+    
+    .product-flex {
+        padding: 0 14vw 0;
+    }
+    .product-group {
+        font-size: 12px; 
+        min-height: 38.5svh;
+    }
+}
+
+/* HD Portrait Phones ONLY */
+@media screen and (width: 720px) and (orientation: portrait) and (min-aspect-ratio: 9/16) {
+    .atlas-layer {
+        background-position:calc(35%);
+        top: 0;
+        height: 100%;
+    }
+    /* Linear Gradient Overlay for focused text */
+    .atlas-layer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            180deg, 
+            rgba(0, 0, 0, 0.3) 0%, 
+            rgba(255, 255, 255, 0.07) 20%, 
+            rgba(255, 255, 255, 0.07) 70%, 
+            rgba(0, 0, 0, 0.3) 100%
+        );
+        pointer-events: none; /* Ensures it doesn't interfere with interactions */
+        z-index: 1; /* Keeps the gradient above the background image but below content */
+    }
+    .landing-content {
+        padding: 0;
+        margin: 0 15%; /*center hero-text block*/
+    }
+    .landing-text {
+        top: 26%;
+        font-size: 15px;
+        align-items: start;
+        
+        gap: 3.6em;
+    }
+    .text-content {
+        max-width: 70vw;
+        gap: 3em;
+    }
+    .landing-text .learn-more-btn {
+       width: 60%;
+    }
+    .landing-image {
+        width: 100vw; /* Occupy almost the entire viewport width */
+        right: -35%; 
+        bottom: 0;
+    }
+
+    .product-group {
+        font-size: 15px; 
+        min-height: 24svh;
+    }
+}
+
+
+
+/* Small Mobile Phones */
+@media screen and (min-width: 375px) and (max-width: 413px) {
+    .atlas-layer {
+        background-position:calc(30%);
+        top: 0;
+        height: 100%;
+    }
+    .atlas-layer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            180deg, 
+            rgba(0, 0, 0, 0.2) 0%, 
+            rgba(255, 255, 255, 0.05) 22%, 
+            rgba(255, 255, 255, 0.05) 75%, 
+            rgba(0, 0, 0, 0.2) 100%
+        );
+        pointer-events: none; /* Ensures it doesn't interfere with interactions */
+        z-index: 1; /* Keeps the gradient above the background image but below content */
+    }
+    .landing-content {
+        padding: 0;
+        margin: 0 8%;
+    }
+    .landing-text {
+        top: 24%;
+        font-size: 9.6px;
+        /* align-items: end; */
+
+        gap: 2.5em;
+    }
+    .text-content {
+        max-width: 80vw;
+        gap: 2em;
+    }
+    .landing-text .learn-more-btn {
+        width: 60%;
+    }
+    .landing-image {
+        width: 90vw;
+        right: -10%; 
+        bottom: 0;
+    }
+
+    .product-flex {
+        padding: 0 8vw 0;
+    }
+    .product-group {
+        font-size: 12px; 
+        min-height: 33svh;
+    }
+}
+
+/* Tiny Mobile Phones */
+@media screen and (max-width: 374px) {
+    .atlas-layer {
+        background-position:calc(30%);
+        top: 0;
+        height: 100%;
+    }
+    .atlas-layer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            180deg, 
+            rgba(0, 0, 0, 0.2) 0%, 
+            rgba(255, 255, 255, 0.05) 20%, 
+            rgba(255, 255, 255, 0.05) 80%, 
+            rgba(0, 0, 0, 0.2) 100%
+        );
+        pointer-events: none; /* Ensures it doesn't interfere with interactions */
+        z-index: 1; /* Keeps the gradient above the background image but below content */
+    }
+    .landing-content {
+        padding: 0;
+        margin: 0 8%;
+    }
+    .landing-text {
+        top: 22%;
+        font-size: 8.8px;
+        /* align-items: end; */
+
+        gap: 2em;
+    }
+    .text-content {
+        max-width: 70vw;
+        gap: 2.1em;
+    }
+    .landing-text .learn-more-btn {
+        width: 60%;
+    }
+    .landing-image {
+        width: 70vw;
+        right: -5%; 
+        bottom: 0;
+    }
+
+    .product-flex {
+        padding: 0 6vw 0;
+    }
+    .product-group {
+        font-size: 9.5px; 
+        min-height: 30svh;
+    }
+
+}
+
+
+
+/* old layouts */
+@ media screen and (max-width: 480px) {
+    /* Global Typography */
+    h 2 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    /* Landing Section */
+    . landing-content {
+        padding: 120px 20px 0;
+    }
+
+    . landing-text h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    . landing-text p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+   
+    /* Testimonials */
+    . testimonial-card {
+        min-width: 260px;
+        padding: 30px 40px;
+    }
+
+    . testimonial-card p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+
+
+/* Responsive adjustments to landing*/
+@ media screen and (max-width: 1600px) {
+    .landing-content {
+        padding: 250px 100px 0;
+    }
+    
+    .landing-image {
+        width: 900px;
+        height: 600px;
+    }
+}
+
+@ media screen and (max-width: 1200px) {
+    .landing-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 200px 50px 0;
+    }
+    
+    .landing-text {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .landing-image {
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+    }
+}

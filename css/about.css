@@ -1,0 +1,1313 @@
+/* Global Styles
+-------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Typography
+-------------------------------------------------- */
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+
+.scale-down {
+    transform: scale(0.88); /* Adjust the scale value as needed (0.9 means 90% of the original size) */
+    transform-origin: top; /* Set the origin for scaling */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Hero Section
+-------------------------------------------------- */
+.landing {
+    position: relative;
+    height: 667px;
+    width: 100%;
+    margin: 0;
+
+    background: linear-gradient(to left, 
+    #8DCF4F 0%,
+    #018E47 96%
+);
+    overflow: hidden;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-hero-overlay::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    background-image: url('../images/add_bg/about_bg6.webp');
+    background-size: cover; /* Keep cover */
+    background-position: center;
+    opacity: 0.15;
+    transform: scale(1.02); /* Scale down to 80% */
+    transform-origin: center; /* Scale from the center */
+    mix-blend-mode: multiply;
+}
+
+
+.about-hero-content {
+    position: relative;
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 55px 20px 0;
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+}
+
+.about-hero-title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 auto 40px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-hero-description {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.4;
+    
+    opacity: 0.95;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); /* Increased shadow */
+}
+
+
+/* Vision & Mission Section
+-------------------------------------------------- */
+.vision-mission {
+    width: 1920px;
+    height: 1269px;
+    background-color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    max-width: 1920px; /* Maximum width */
+    margin: 0 auto; /* Center the content */
+}
+
+/* Base styles for containers */
+.vision-container,
+.mission-container {
+    position: absolute;
+    width: 696px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Position vision container */
+.vision-container {
+    left: 274px;
+    top: 195px;
+}
+
+/* Position mission container */
+.mission-container {
+    left: 970px;
+    top: 703px;
+}
+
+/* Section Titles */
+.vision-container h2,
+.mission-container h2 {
+    font-size: 48px;
+    color: #018F47;
+    margin: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/* Section Text */
+.vision-container p,
+.mission-container p {
+    font-size: 20px;
+    color: #181818;
+    line-height: 1.75;
+    margin: 0;
+    width: 696px;
+}
+
+/* Images */
+.mission-image {
+    position: absolute;
+    left: 274px;
+    top: 622px;
+    width: 493px;
+    height: 368px;
+    border-radius: 30px;
+    object-fit: cover;
+    z-index: 2; /* Add this to make sure image appears above decoration */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Optional: adds depth */
+}
+
+.vision-image {
+    position: absolute;
+    left: 1187px;
+    top: 142px;
+    width: 489px;
+    height: 364px;
+    border-radius: 30px;
+    object-fit: cover;
+    z-index: 2; /* Add this to make sure image appears above decoration */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Optional: adds depth */
+}
+
+/* Remove the previous gradient-based decorations */
+/* And replace with these image-based decorations */
+.mission-decoration,
+.vision-decoration {
+    position: absolute;
+    width: 344.68px;
+    height: 243.65px;
+    border-radius: 30px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mission-decoration {
+    left: 520px;
+    top: 621px;
+    background-image: url('../assets/mission-vision/card_mission.png');
+    
+}
+
+.vision-decoration {
+    left: 1086px;
+    top: 260px;
+    background-image: url('../assets/mission-vision/card_vision.png');
+   
+}
+
+
+
+/* Stats Section ------------------------------------------------- */
+.stats-section {
+    /* width: 1917px;
+    height: 987px; */
+    width: 100%;
+    height: auto;
+    position: relative;
+    background:
+    linear-gradient(180deg, 
+        rgba(1, 143, 71, 0.95) 0%,
+        rgba(141, 207, 79, 0.85) 100%
+    );
+    padding: 98px 0;
+    overflow: hidden;
+    /* max-width: 1920px; */
+    /* margin: 0 auto;  */
+    z-index: -3;
+}
+
+/* Background image and overlay */
+.stats-section .background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+  
+.stats-section .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/stats-section/statistics-bg.webp') center center / cover no-repeat;
+    z-index: -1;
+}
+  
+.stats-section .crosses-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none; /* Prevent interaction with the SVG */
+}
+
+/* Decorative elements */
+.bottle-image {
+    position: absolute;
+    left: 23px;
+    top: 506px;
+    width: 604px;
+    height: 602px;
+    background-image: url('../assets/stats-section/bottle_edited_1.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    mix-blend-mode: passthrough; /* Changed from multiply */
+    z-index: 1; /* Added z-index */
+}
+
+
+.leaf-image {
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 940px;
+    height: 602px;
+    background-image: url('../assets/stats-section/leaf.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    mix-blend-mode: passthrough; /* Changed from multiply */
+    z-index: 1; /* Added z-index */
+}
+
+
+.droplet-image {
+    position: absolute;
+    left: 196px;
+    top: 478px;
+    width: 190px;
+    height: 205px;
+    background-image: url('../assets/stats-section/droplet.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    mix-blend-mode: screen; /* Changed from screen */
+    z-index: 2; /* Higher z-index to appear above other elements */
+    filter: brightness(1.2); /* Added brightness to make it more visible */
+}
+
+
+/* Stats boxes container */
+.stats-boxes {
+    position: relative;
+    width: 518px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 27.84px;
+    z-index: 2;
+}
+
+/* Individual stat box */
+.stat-box {
+    width: 518px;
+    height: 176px;
+    background: #FFFFFF;
+    border-radius: 16.53px;
+    padding: 42px 52.9px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 13.92px 41.76px rgba(0, 0, 0, 0.15);
+}
+
+/* Stat text */
+.stat-text {
+    font-size: 28px;
+    color: #181818;
+    line-height: 1.5;
+    max-width: 309px;
+    padding-left: 9px;
+}
+
+/* Decorative elements */
+/* .stats-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.stats-decoration .cross {
+    position: absolute;
+    opacity: 0.2;
+    mix-blend-mode: color-dodge;
+} */
+
+
+
+/* Our Story Section */
+.story-section {
+    width: 1920px;
+    height: 2023px;
+    background-color: #FFFFFF;
+    padding-top: 103px;
+    position: relative;
+    max-width: 1920px; /* Maximum width */
+    margin: 0 auto; /* Center the content */
+}
+
+.story-title {
+    font-size: 48px;
+    color: #018F47;
+    text-align: center;
+    width: 785px;
+    margin: 0 auto 79px;
+}
+
+/* Timeline line */
+.timeline-line {
+    position: absolute;
+    left: 960px;
+    top: 242px;
+    width: 3px;
+    height: 1669px;
+    background-color: #8DCF4F;
+}
+
+/* Timeline items */
+.timeline-item {
+    display: flex;
+    position: absolute; /* Changed to absolute positioning */
+    width: 780px; /* Fixed width for container */
+}
+
+.timeline-icon {
+    width: 160px;
+    height: 160px;
+    border: 3px solid #018F47;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px;
+}
+
+.timeline-content {
+    width: 490px;
+    height: 199px;
+    font-size: 21px;
+    line-height: auto;
+    align-content: top;
+}
+
+/* Position each timeline item */
+.timeline-item:nth-child(1) {
+    left: 1001px;
+    top: 234px;
+}
+
+.timeline-item:nth-child(2) {
+    left: 135px;
+    top: 486px;
+}
+
+.timeline-item:nth-child(3) {
+    left: 1001px;
+    top: 815px;
+}
+
+.timeline-item:nth-child(4) {
+    left: 135px;
+    top: 1086px;
+}
+
+.timeline-item:nth-child(5) {
+    left: 1001px;
+    top: 1323px;
+}
+
+.timeline-item:nth-child(6) {
+    left: 135px;
+    top: 1644px;
+}
+
+/* Alternate text alignment */
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    text-align: right;
+}
+
+/* Bold text */
+.timeline-content strong {
+    font-weight: 700;
+}
+
+
+/* Global Presence Section
+-------------------------------------------------- */
+.map-section {
+    width: 1920px;
+    height: 1225px;
+    background-color: #FFFFFF;
+    padding-top: 86px;
+    position: relative;
+    /* max-width: 1920px; */
+    margin: 0 auto; /* Center the content */
+    max-width: 100vw;
+    min-width: 1580px; /*preserve alignment of map and markers*/
+}
+
+.map-content {
+    width: 90%; /* Changed from fixed width */
+    max-width: 1473px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.map-title {
+    font-size: 48px;
+    color: #018F47;
+    text-align: center;
+    width: 785px;
+    margin: 0 auto 40px;
+    
+}
+
+.map-description {
+    font-size: 28px;
+    letter-spacing: -2%;
+    line-height: auto;
+    color: #181818;
+    width: 1001px;
+    margin: 0 auto 5px;
+    text-align: center;
+   
+}
+
+.map-description-2 {
+    font-size: 28px;
+    letter-spacing: -2%;
+    line-height: auto;
+    color: #181818;
+    width: 1001px;
+    margin: 0 auto 5px;
+    text-align: center;
+    margin-top:20px;
+
+}
+/* Map container */
+.map-container {
+    position: relative;
+    width: 100%; /* Changed from fixed width */
+    max-width: 1371.77px;
+    height: 675px;
+    margin: 20px auto 0;
+    /* display: inline-block; */
+}
+
+/* World map SVG */
+.world-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Base layer */
+
+    overflow: visible;
+}
+
+/* Default style for SVG paths */
+.world-map path {
+    fill: #d3d3d3;
+    transition: fill 0.3s ease, transform 0.5s ease-in, 0.8s ease-out;
+}
+
+.world-map path:hover {
+    fill: url(#gradient-hover);
+    transform: scale(1.01);
+    transform-origin: center center; /* Scale from the center of each path */
+    filter: drop-shadow(0 0 5px #8DCF4F);
+}
+
+
+/* Location markers */
+/* .location-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #018F47;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+} */
+/* Add to your existing map section CSS */
+.map-markers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Update the marker-dot class */
+.marker-dot {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background-color: #018F47;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add outer circle */
+.marker-dot::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #018F47;
+    border-radius: 50%;
+}
+
+/* Update marker line */
+.marker-line {
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: drawLine 1s ease-out forwards;
+    height: 3px;
+    background-color: #018F47;
+}
+
+/* Adjust country marker layout */
+.country-marker {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space between flag and country name */
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+    transform-origin: center; /* Set transform origin to center */
+    z-index: 1; /* Default z-index */
+}
+
+/* Add hover effect for the entire marker */
+.country-marker:hover {
+    transform: scale(1.2); /* Scale up by 20% on hover */
+    z-index: 10; /* Bring hovered marker to front */
+}
+
+/* Update the flag and text hover effects */
+.flag-icon {
+    width: 50px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    margin: 0 5px;
+}
+
+.country-name {
+    color: #C6C6C6;
+    font-size: 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0 5px;
+    transition: color 0.3s ease; /* Add transition for color change */
+}
+
+/* Update hover effects for marker components */
+.country-marker:hover .country-name {
+    color: #018F47; /* Change text color on hover */
+}
+
+.country-marker:hover .marker-dot {
+    background-color: #018F47; /* Brighten the dot on hover */
+    box-shadow: 0 0 10px rgba(1, 143, 71, 0.5); /* Add glow effect */
+}
+
+.country-marker:hover .marker-line {
+    background-color: #018F47; /* Brighten the line on hover */
+}
+
+/* Optional: Add a subtle glow effect to the entire marker on hover */
+.country-marker:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(1, 143, 71, 0.1);
+    border-radius: 20px;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+/* Position each country marker */
+.usa-marker {
+    top: 32%;
+    left: 15%;
+    flex-direction: row; /* Flag on left, text on right */
+}
+
+.estonia-marker {
+    top: 22%;
+    left: 35%;
+    flex-direction: row; /* Flag on left, text on right */
+}
+
+.austria-marker {
+    top: 34%;
+    left: 33%;
+    flex-direction: row; /* Flag on left, text on right */
+}
+
+.israel-marker {
+    top: 42%;
+    left: 35%;
+    flex-direction: row; /* Flag on left, text on right */
+}
+
+.taiwan-marker {
+    top: 42%;
+    left: 78%;
+    flex-direction: row-reverse; /* Flag on right, text on left */
+}
+
+.philippines-marker {
+    top: 48%;
+    left: 80%;
+    flex-direction: row-reverse; /* Flag on right, text on left */
+}
+
+.israel-marker .marker-line {
+    width: 170px; /* Increased from 70px to 100px */
+}
+.austria-marker .marker-line {
+    width: 140px; /* Increased from 70px to 100px */
+}
+.estonia-marker .marker-line {
+    width: 110px; /* Increased from 70px to 100px */
+}
+
+
+/* Partners Section
+-------------------------------------------------- */
+.partners-section {
+    padding: 80px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.partners-content {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+.partners-section .section-title {
+    color: #019447;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.partners-section .section-text {
+    color: #181818;
+    font-size: 28px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Partners Grid - Updated for single line */
+.partners-grid {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.partner-logo {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
+.partner-logo img {
+    height: 100%;
+    object-fit: contain;
+    max-width: 220px;
+}
+
+.edited-ko-da-logo {
+    margin-right: 20px;
+}
+
+/* Shop Links - Updated for single line */
+.shop-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+    gap: 60px;
+    /* Removed border-top */
+}
+
+.shop-link {
+    height: 45px; /* Slightly reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.shop-link:hover {
+    transform: scale(1.1);
+}
+
+.shop-link img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.shop-link:hover img {
+    opacity: 1;
+}
+
+
+/* First, add these base animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Apply to specific sections you want to animate */
+.vision-container,
+.mission-container,
+.vision-image,
+.mission-image,
+.stats-boxes .stat-box,
+.timeline-item,
+.partners-content,
+.partner-logo,
+.map-content,
+.contact-frame {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+/* Add stagger effect for multiple items */
+.stats-boxes .stat-box:nth-child(1) { transition-delay: 0.1s; }
+.stats-boxes .stat-box:nth-child(2) { transition-delay: 0.2s; }
+.stats-boxes .stat-box:nth-child(3) { transition-delay: 0.3s; }
+.stats-boxes .stat-box:nth-child(4) { transition-delay: 0.4s; }
+
+.timeline-item:nth-child(even) { transition-delay: 0.2s; }
+
+.partner-logo:nth-child(1) { transition-delay: 0.1s; }
+.partner-logo:nth-child(2) { transition-delay: 0.2s; }
+.partner-logo:nth-child(3) { transition-delay: 0.3s; }
+.partner-logo:nth-child(4) { transition-delay: 0.4s; }
+.partner-logo:nth-child(5) { transition-delay: 0.5s; }
+.partner-logo:nth-child(6) { transition-delay: 0.6s; }
+
+/* Map Section Animations */
+@keyframes fadeInMap {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulseMarker {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes drawLine {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes slideInText {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Optional: Add a floating animation to the entire map */
+@keyframes floatMap {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.map-container {
+    animation: fadeInMap 1s ease-out, floatMap 6s ease-in-out infinite;
+}
+
+.marker-dot {
+    animation: pulseMarker 2s infinite;
+}
+
+.marker-line {
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: drawLine 1s ease-out forwards;
+    height: 3px;
+    background-color: #018F47;
+}
+
+.country-name {
+    animation: slideInText 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+/* Stagger the animations for each country */
+.usa-marker .country-name { animation-delay: 0.2s; }
+.estonia-marker .country-name { animation-delay: 0.4s; }
+.austria-marker .country-name { animation-delay: 0.6s; }
+.israel-marker .country-name { animation-delay: 0.8s; }
+.taiwan-marker .country-name { animation-delay: 1s; }
+.philippines-marker .country-name { animation-delay: 1.2s; }
+
+.usa-marker .marker-line { animation-delay: 0.2s; }
+.estonia-marker .marker-line { animation-delay: 0.4s; }
+.austria-marker .marker-line { animation-delay: 0.6s; }
+.israel-marker .marker-line { animation-delay: 0.8s; }
+.taiwan-marker .marker-line { animation-delay: 1s; }
+.philippines-marker .marker-line { animation-delay: 1.2s; }
+
+/* Add hover effects */
+.country-marker:hover .marker-dot {
+    animation: pulseMarker 1s infinite;
+}
+
+.country-marker:hover .country-name {
+    color: #018F47;
+    transition: color 0.3s ease;
+}
+
+
+
+
+
+/* Add these styles for snap scrolling */
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+/* Add snap alignment to each main section */
+.hero-section,
+.vision-mission,
+.stats-section,
+.story-section,
+.map-section,
+.partners-section,
+.cta-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* Optional: Add smooth transition for better UX */
+.hero-section,
+.vision-mission,
+.stats-section,
+.story-section,
+.map-section,
+.partners-section,
+.cta-section {
+    transition: transform 0.5s ease;
+}
+
+/* Update scroll progress styles */
+.scroll-progress {
+    position: fixed;
+    right: 30px; /* Moved slightly further from edge */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap between dots */
+    z-index: 1000;
+    padding: 10px;
+}
+
+.scroll-dot {
+    width: 12px; /* Slightly larger dots */
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(141, 207, 79, 0.5); /* Light green, semi-transparent */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.scroll-dot:hover {
+    transform: scale(1.2);
+    background-color: #018F47; /* Darker green on hover */
+}
+
+.scroll-dot.active {
+    background-color: #018F47;
+    transform: scale(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.8); /* White border for active dot */
+    box-shadow: 0 0 10px rgba(1, 143, 71, 0.3); /* Subtle glow effect */
+}
+
+/* Update marker line styles for all countries */
+.usa-marker .marker-line { 
+    width: 100px;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: drawLine 1s ease-out forwards 0.2s;
+}
+
+.estonia-marker .marker-line { 
+    width: 110px;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: drawLine 1s ease-out forwards 0.4s;
+}
+
+.austria-marker .marker-line { 
+    width: 140px;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: drawLine 1s ease-out forwards 0.6s;
+}
+
+.israel-marker .marker-line { 
+    width: 170px;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: drawLine 1s ease-out forwards 0.8s;
+}
+
+.taiwan-marker .marker-line { 
+    width: 70px;
+    transform-origin: right; /* Changed to right for Asian countries */
+    transform: scaleX(0);
+    animation: drawLine 1s ease-out forwards 1s;
+}
+
+.philippines-marker .marker-line { 
+    width: 70px;
+    transform-origin: right; /* Changed to right for Asian countries */
+    transform: scaleX(0);
+    animation: drawLine 1s ease-out forwards 1.2s;
+}
+
+/* Update marker positions for better alignment */
+.usa-marker {
+    top: 38%;
+    left: -5%;
+    flex-direction: row;
+}
+
+.taiwan-marker {
+    top: 48%;
+    left: 81%;
+    flex-direction: row-reverse;
+}
+
+.philippines-marker {
+    top: 54%;
+    left: 81%;
+    flex-direction: row-reverse;
+}
+
+.israel-marker {
+    top: 42%;
+    left: 31%;
+}
+
+.austria-marker {
+    top: 33%;
+    left: 27%;
+}
+
+.estonia-marker {
+    top: 22%;
+    left: 31%;
+}
+
+/* Add this keyframe for right-aligned lines */
+@keyframes drawLineReverse {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* Apply reverse animation to Asian countries */
+.taiwan-marker .marker-line,
+.philippines-marker .marker-line {
+    animation-name: drawLineReverse;
+}
+
+/* Add this near the top with other global styles */
+a {
+    text-decoration: none;
+}
+
+/* Optional: Add a ripple effect around the dot */
+.marker-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px; /* Match dot size */
+    height: 16px; /* Match dot size */
+    background: rgba(1, 142, 71, 0.3); /* Semi-transparent version of dot color */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 2s ease-out infinite;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+/* Medium-Large Screens (1201px - 1440px) */
+@media screen and (max-width: 1440px) {
+    /* Hero Section */
+    .about-hero-content {
+        padding: 45px 20px 0;
+        max-width: 800px;
+    }
+
+    .about-hero-title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    .about-hero-description {
+        font-size: 23px;
+    }
+
+    /* Vision & Mission Section */
+    .vision-mission {
+        width: 130%;
+        max-width: 1720px;
+        height: 1000px;  /* Adjusted height */
+        margin-left: -20%;
+        scale: 0.8;
+        transform-origin: top center;
+        margin-bottom: -250px;  /* Adjusted margin */
+    }
+
+    .vision-container,
+    .mission-container {
+        width: 600px;  /* Adjusted width */
+    }
+
+    .vision-container h2,
+    .mission-container h2 {
+        font-size: 46px;  /* Slightly larger */
+        height: 55px;
+        margin-bottom: 20px;
+    }
+
+    .vision-container p,
+    .mission-container p {
+        font-size: 20px;  /* Increased for better readability */
+        width: 580px;
+        line-height: 1.6;
+    }
+
+    /* Adjust images */
+    .mission-image,
+    .vision-image {
+        width: 450px;
+        height: 330px;
+    }
+
+    /* Stats Section */
+   
+    .stat-box {
+        width: 500px;
+        font-size: 21px;
+        margin-left: 250px;
+        scale: 0.9;
+    }
+
+     /* Story Section */
+    .story-section {
+        width: 130%;
+        max-width: 1720px;
+        margin-left: -23%;
+        scale: 0.8;
+        transform-origin: top center;
+        margin-bottom: -300px;
+    }
+
+    .story-title {
+        font-size: 42px;
+        margin-bottom: 60px;
+        margin-left: 570px;
+    }
+
+    .timeline-content {
+        font-size: 20px;
+        width: 400px;
+        height: 199px;
+        font-size: 21px;
+        line-height: auto;
+        align-content: top;
+    }
+    
+    .map-section {
+        position: relative;
+        scale: 0.7;
+        right: 10%;
+        top: -20px;
+    }
+
+    .map-section .map-content {
+        margin-top: -120px;
+        
+    }
+
+    /* Partners Section Refinements */
+    .partners-section {
+        padding: 60px 0;
+        margin-top: -50px;  /* Adjust spacing from previous section */
+        margin-left: 3%;
+        scale: 0.9;
+        margin-bottom: -50px;
+    }
+    .partners-section .section-title {
+        font-size: 46px;
+        margin-bottom: 30px;
+    }
+
+    .partners-section .section-text {
+        font-size: 24px;
+        max-width: 900px;
+        margin: 0 auto 40px;
+    }
+
+    .partners-grid {
+        max-width: 1200px;
+        gap: 40px;
+        padding: 0 40px;
+    }
+
+    .partner-logo {
+        width: 160px;
+        height: 160px;
+        padding: 15px;
+    }
+
+    .partner-logo img {
+        max-width: 180px;
+    }
+
+    /* Shop links adjustments */
+    .shop-links {
+        margin-top: 50px;
+        gap: 50px;
+    }
+
+    .shop-link {
+        height: 40px;
+    }
+}
