@@ -1,4 +1,4 @@
-@media screen and (min-width: 2560px) {
+@ media screen and (min-width: 2560px) {
     .product-group {
         font-size: 18px;
         min-height: 40vh;
@@ -7,14 +7,14 @@
 
 
 
-@media screen and (min-width: 1920px) {
+@ media screen and (min-width: 1920px) {
     .product-group {
         font-size: 16px; /* Standard Large Desktops  */
         min-height: 32vh;
     }
 }
 
-@media screen and (min-width: 1440px) and (max-width: 1919px) {
+@ media screen and (min-width: 1440px) and (max-width: 1919px) {
     .product-group {
         font-size: 15px; /* Medium Desktops  */
         min-height: 36vh;
@@ -22,7 +22,7 @@
     }
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1439px) and (orientation: landscape) {
+@ media screen and (min-width: 1280px) and (max-width: 1439px) and (orientation: landscape) {
     .product-group {
         font-size: 14.5px; /* Small Desktops on landscape */
         min-height: 32vh;
@@ -30,7 +30,7 @@
     }
 }
 /* Tablets */
-@media screen and (min-width: 768px) and (max-width: 1279px)  {
+@ media screen and (min-width: 768px) and (max-width: 1279px)  {
     .product-group {
         font-size: 14px; 
         min-height: 28vh;
@@ -38,14 +38,12 @@
     }
 }
 /*FHD-QHD phones*/
-@media screen and (min-width: 1080px) and (orientation: portrait) {
+@ media screen and (min-width: 1080px) and (orientation: portrait) {
     .product-group {
         font-size: 23px;
         min-height: 24svh;
     }
 }
-
-
 
 /*gap before tablet breakpoint (General range for medium phones )*/
 @media screen and (min-width: 414px) and (max-width: 767px) {
@@ -81,7 +79,7 @@
 }
 
 /* HD Portrait Phones ONLY */
-@media screen and (width: 720px) and (orientation: portrait) and (min-aspect-ratio: 9/16) {
+@ media screen and (width: 720px) and (orientation: portrait) and (min-aspect-ratio: 9/16) {
     .atlas-layer {
         background-position:calc(35%);
         top: 0;
