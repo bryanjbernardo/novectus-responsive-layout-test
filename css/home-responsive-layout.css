@@ -46,7 +46,8 @@
 }
 
 /*gap before tablet breakpoint (General range for medium phones )*/
-@media screen and (min-width: 414px) and (max-width: 767px) {
+/*  (larger phones, 19.5:9) */
+@media screen and (min-width: 414px) {
     body {
         font-size: 12px; 
     }
@@ -142,8 +143,8 @@
 }
 
 
-
-/* Small Mobile Phones */
+/* Small Mobile Phones */ 
+/* 375px - typical for iPhone SE-sized devices)  */
 @media screen and (min-width: 375px) and (max-width: 413px) {
     .atlas-layer {
         background-position:calc(30%);
