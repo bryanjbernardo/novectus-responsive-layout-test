@@ -47,7 +47,7 @@
 
 /*gap before tablet breakpoint (General range for medium phones )*/
 /*  (larger phones, 19.5:9) */
-@media screen and (min-width: 414px) {
+@media screen and (min-width: 414px) and (min-aspect-ratio: 9/16) {
     body {
         font-size: 12px; 
     }
