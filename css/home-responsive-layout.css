@@ -38,7 +38,7 @@
     }
 }
 /*FHD-QHD phones*/
-@media screen and (min-width: 1080px) and (orientation: portrait) {
+@media screen and (min-width: 1080px) and (orientation: portrait) and (min-aspect-ratio: 9/16) {
     .product-group {
         font-size: 22px;
         min-height: 24svh;
