@@ -45,9 +45,16 @@
     }
 }
 
-/*gap before tablet breakpoint (General range for medium phones )*/
-/*  (larger phones, 19.5:9) */
-@media screen and (min-device-width: 414px) and (max-device-width: 767px) {
+/* Large Phones and Compact Tablets */
+/* Includes high-DPI devices like Google Pixel 7 Pro, Samsung Galaxy Ultra series, and small tablets with CSS widths between 480px–767px */
+@ media screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+
+/* Medium-Sized Mobile Phones (HD to FHD), 16:9 and 19.5:9 */
+/* Covers popular midrange and high-end phones like iPhone XR and Samsung Galaxy A/S-series 
+   with CSS widths between 414px–479px */
+@media screen and (min-width: 414px) and (max-width: 479px) and (min-aspect-ratio: 9/16) {
     body {
         font-size: 12px; 
     }
@@ -67,7 +74,7 @@
     }
     .landing-text {
         top: 24%;
-        align-items: end;
+        /* align-items: end; */
 
         gap: 2.8em;
     }
@@ -142,10 +149,19 @@
     }
 }
 
+/* Small-Sized Mobile Phones, 16:9 and 18:9 */
+/* Targets compact devices like iPhone SE, smaller Samsung Galaxy models, and similar phones with CSS widths between 375px–413px */
+@ media screen and (min-width: 375px) and (max-width: 413px) {
+    body {
+        font-size: 10px; 
+    }
+    h 2 {
+        font-size: 2.403846em;
+        line-height: 1.25;
 
-/* Small Mobile Phones */ 
-/* 375px - typical for iPhone SE-sized devices)  */
-@media screen and (min-width: 375px) and (max-width: 413px) {
+        padding: 0 10vw 0;
+    }
+
     .atlas-layer {
         background-position:calc(30%);
         top: 0;
@@ -174,7 +190,7 @@
     }
     .landing-text {
         top: 24%;
-        font-size: 9.6px;
+        /* font-size: 9.6px; */
         /* align-items: end; */
 
         gap: 2.5em;
@@ -201,8 +217,9 @@
     }
 }
 
-/* Tiny Mobile Phones */
-@media screen and (max-width: 374px) {
+/* Tiny Mobile Phones and Low-Resolution Devices */
+/* For ultra-compact devices and older phones with CSS widths less than 375px */
+@ media screen and (max-width: 374px) {
     .atlas-layer {
         background-position:calc(30%);
         top: 0;
@@ -258,6 +275,41 @@
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
