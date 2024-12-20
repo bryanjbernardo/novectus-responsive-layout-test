@@ -54,7 +54,7 @@
 /* Medium-Sized Mobile Phones (HD to FHD), 16:9 and 19.5:9 */
 /* Covers popular midrange and high-end phones like iPhone XR and Samsung Galaxy A/S-series 
    with CSS widths between 414px–479px */
-@media screen and (min-width: 414px) and (max-width: 479px) and (min-aspect-ratio: 9/16) {
+@media screen and (min-width: 414px) and (max-width: 479px) {
     body {
         font-size: 12px; 
     }
