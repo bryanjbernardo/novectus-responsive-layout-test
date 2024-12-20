@@ -47,7 +47,7 @@
 
 /* Large Phones and Compact Tablets */
 /* Includes high-DPI devices like Google Pixel 7 Pro, Samsung Galaxy Ultra series, and small tablets with CSS widths between 480px–767px */
-@ media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
 
 }
 
@@ -148,7 +148,7 @@
 
 /* Small Mobile Phones */
 /* For devices like Samsung S23 and others with high DPR */
-@media screen and (min-width: 360px) and (max-width: 413px) {
+@media screen and (min-width: 360px) and (max-width: 480px) {
     body {
         font-size: 10px; 
     }
@@ -216,16 +216,7 @@
 
 /* Tiny Mobile Phones and Low-DPI Small Phones */
 /* Styles for devices with CSS width < 360px */
-@media screen and (max-width: 359px) {
-    body {
-        font-size: 9px; 
-    }
-    h2 {
-        font-size: 3em;
-        line-height: 1.2;
-
-        padding: 0 10vw 0;
-    }
+@ media screen and (max-width: 359px) {
     .atlas-layer {
         background-position:calc(30%);
         top: 0;
@@ -254,7 +245,7 @@
     }
     .landing-text {
         top: 22%;
-        /* font-size: 8.8px; */
+        font-size: 8.8px;
         /* align-items: end; */
 
         gap: 2em;
