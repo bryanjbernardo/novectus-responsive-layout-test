@@ -47,11 +47,11 @@
 
 /* Large Phones and Compact Tablets */
 /* Includes high-DPI devices like Google Pixel 7 Pro, Samsung Galaxy Ultra series, and small tablets with CSS widths between 480px–767px */
-@media screen and (max-width: 767px) {
+@ media screen and (max-width: 767px) {
 
 }
 
-@media screen and (min-width: 414px) and (max-width: 480px) {
+@ media screen and (min-width: 414px) and (max-width: 480px) {
     body {
         font-size: 12px; 
     }
@@ -209,7 +209,6 @@
         padding: 0 8vw 0;
     }
     .product-group {
-        font-size: 12px; 
         min-height: 33svh;
     }
 }
