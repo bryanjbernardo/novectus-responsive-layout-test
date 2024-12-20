@@ -47,14 +47,11 @@
 
 /* Large Phones and Compact Tablets */
 /* Includes high-DPI devices like Google Pixel 7 Pro, Samsung Galaxy Ultra series, and small tablets with CSS widths between 480px–767px */
-@ media screen and (min-width: 480px) and (max-width: 767px) {
+@ media screen and (max-width: 767px) {
 
 }
 
-/* Medium-Sized Mobile Phones (HD to FHD), 16:9 and 19.5:9 */
-/* Covers popular midrange and high-end phones like iPhone XR and Samsung Galaxy A/S-series 
-   with CSS widths between 414px–479px */
-@media screen and (min-width: 414px) and (max-width: 479px) and {
+@media screen and (min-width: 414px) and (max-width: 480px) {
     body {
         font-size: 12px; 
     }
@@ -149,13 +146,13 @@
     }
 }
 
-/* Small-Sized Mobile Phones, 16:9 and 18:9 */
-/* Targets compact devices like iPhone SE, smaller Samsung Galaxy models, and similar phones with CSS widths between 375px–413px */
-@media screen and (min-width: 375px) and (max-width: 413px) {
+/* Small Mobile Phones */
+/* For devices like Samsung S23 and others with high DPR */
+@media screen and (min-width: 360px) and (max-width: 413px) {
     body {
         font-size: 10px; 
     }
-    h 2 {
+    h2 {
         font-size: 2.403846em;
         line-height: 1.25;
 
@@ -217,9 +214,18 @@
     }
 }
 
-/* Tiny Mobile Phones and Low-Resolution Devices */
-/* For ultra-compact devices and older phones with CSS widths less than 375px */
-@ media screen and (max-width: 374px) {
+/* Tiny Mobile Phones and Low-DPI Small Phones */
+/* Styles for devices with CSS width < 360px */
+@media screen and (max-width: 359px) {
+    body {
+        font-size: 9px; 
+    }
+    h2 {
+        font-size: 3em;
+        line-height: 1.2;
+
+        padding: 0 10vw 0;
+    }
     .atlas-layer {
         background-position:calc(30%);
         top: 0;
@@ -248,7 +254,7 @@
     }
     .landing-text {
         top: 22%;
-        font-size: 8.8px;
+        /* font-size: 8.8px; */
         /* align-items: end; */
 
         gap: 2em;
