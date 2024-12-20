@@ -183,7 +183,7 @@
     }
     .landing-content {
         padding: 0;
-        margin: 0 8%;
+        margin: 0 15%;
     }
     .landing-text {
         top: 24%;
@@ -201,7 +201,7 @@
     }
     .landing-image {
         width: 90vw;
-        right: -10%; 
+        right: -25%; 
         bottom: 0;
     }
 

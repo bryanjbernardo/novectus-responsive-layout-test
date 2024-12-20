@@ -313,7 +313,7 @@ a {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 
-    font-size: 1em;
+    /* font-size: 1em; */
 }
 
 /* Prevent figcaption vertical overflow: one item per row */
@@ -377,7 +377,8 @@ a {
     font-weight: 700;
     /* font-size: 42px; */
     /* font-size: clamp(20px, 5vw, 42px); */
-    font-size: clamp(1.25em, 2.25em, 2.625em);
+    /* font-size: clamp(1.25em, 2.25em, 2.625em); */
+    font-size: 2.25em;
     line-height: 1.05;
     text-align: center;
     letter-spacing: -0.02em;
@@ -389,7 +390,9 @@ a {
     font-style: normal;
     font-weight: 400;
     /* font-size: clamp(18px, 0.66em, 28px); */
-    font-size: clamp(0.833em, 1.5em, 1.75em); /* Proportional to h3 */
+    /* font-size: clamp(0.833em, 1.5em, 1.75em);  */
+    /* Proportional to h3 */
+    font-size: 1.5em;
     line-height: 1.2;
     text-align: center;
     order: 1;
@@ -406,7 +409,8 @@ a {
     color: #fff;
     font-weight: 700;
     /* font-size: 32px; */
-    font-size: clamp(1.428em, 1.7143em, 2em);
+    /* font-size: clamp(1.428em, 1.7143em, 2em); */
+    font-size: 1.7143em;
     line-height: 1.2;
     border: 0.125em solid #fff;
     border-radius: 0.73em;
