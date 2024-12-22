@@ -219,7 +219,7 @@
     }
     
     #about-us {
-        height: 95svh;
+        height: 95vh;
         display: flex;
         flex-flow: column-reverse;
         align-items: center;
@@ -232,7 +232,7 @@
         left: unset;
         top: unset;
         max-width: 80vw;
-        margin-bottom: 10%;
+        margin: 10% auto;
     }
     .about-content {
         position: relative;
