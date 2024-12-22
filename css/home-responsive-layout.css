@@ -188,7 +188,7 @@
     .landing-text {
         top: 24%;
         /* font-size: 9.6px; */
-        /* align-items: end; */
+        align-items: end;
 
         gap: 2.5em;
     }
