@@ -431,7 +431,7 @@ a {
 /* About Us Section - Full width with split layout */
 #about-us {
     /* margin-top: 120px; */
-    height: 90vh;
+    height: 90svh;
     min-width: 100vw;
     background-color: #E7F5D9;
 
