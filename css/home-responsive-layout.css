@@ -188,7 +188,7 @@
     .landing-text {
         top: 24%;
         /* font-size: 9.6px; */
-        /* align-items: end; */
+        align-items: end;
 
         gap: 2.5em;
     }
@@ -209,7 +209,7 @@
         padding: 0 8vw 0;
     }
     .product-group {
-        max-height: 33svh;
+        height: 33svh;
     }
 }
 
