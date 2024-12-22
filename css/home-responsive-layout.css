@@ -146,17 +146,17 @@
     }
 }
 
-/* Small Mobile Phones */
-/* For devices like Samsung S23 and others with high DPR */
-@media screen and (min-width: 360px) and (max-width: 480px) {
+/* Standard Phones (DPR between 2 and 3.5, width between 360px and 480px) */
+@media screen and (min-width: 360px) and (max-width: 480px) and (min-resolution: 2dppx) and (max-resolution: 3.5dppx)  {
+
+     /* Styles for standard phones like iPhones and modern Android devices */
     body {
-        font-size: 10px; 
+        font-size: 11px; 
     }
     h2 {
-        font-size: 2.403846em;
-        line-height: 1.25;
-
-        padding: 0 10vw 0;
+        /* font-size: 2.403846em; */
+        /* padding: 0 10vw 0; */
+        font-size: 2.6em;
     }
 
     .atlas-layer {
@@ -183,12 +183,12 @@
     }
     .landing-content {
         padding: 0;
-        margin: 0 15%;
+        margin: 0 13%;
     }
     .landing-text {
         top: 24%;
         /* font-size: 9.6px; */
-        align-items: end;
+        /* align-items: end; */
 
         gap: 2.5em;
     }
@@ -206,16 +206,88 @@
     }
 
     .product-flex {
-        padding: 0 8vw 0;
+        padding: 0 8vw 16vh;
     }
     .product-group {
         height: 33svh;
     }
+    
+    #about-us {
+        display: flex;
+        flex-flow: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+
+        overflow: hidden;
+    }
+    .about-image img {
+        position: relative;
+        left: unset;
+        top: unset;
+        max-width: 80vw;
+        margin-bottom: 10%;
+    }
+    .about-content {
+        position: relative;
+        right: unset;
+        bottom: unset;
+        padding: 15% 0;
+
+        max-width: 80vw;
+        height: 100%;
+        gap: 2.4em;
+    }
+    .about-content h2 {
+        padding-bottom: 0;
+    }
+    #about-us .learn-more-btn {
+        width: 57%;
+    }
 }
 
-/* Tiny Mobile Phones and Low-DPI Small Phones */
-/* Styles for devices with CSS width < 360px */
-@ media screen and (max-width: 359px) {
+/* For iPhone SE-like phones with 16:9 aspect ratio */
+@media screen and (min-width: 360px) and (max-width: 375px) and (max-resolution: 2dppx) and (max-aspect-ratio: 9/16) {
+
+    body {
+        font-size: 10px;
+    }
+    .text-content {
+        max-width: 65vw;
+        /* gap: 2em; */
+    }
+
+    .landing-text h1 {
+        font-size: 2.60416em;; 
+    }
+    .landing-text p {
+        font-size: 1.667em; 
+    }
+    .landing-text .learn-more-btn {
+        font-size: 1.875375em;
+        width: 50%;
+        padding: 0.73em 2.1875em;
+    }
+    .landing-image {
+        width: 80vw;
+        right: -25%; 
+        bottom: 0;
+    }
+    
+    #about-us {
+        height: 100vh;
+    }
+    .about-content {
+        gap: 2em;
+    }
+    .about-image img {
+        margin-bottom: 8%;
+    }
+}
+
+/* Small and Low-DPI Phones (CSS width < 360px) */
+@ media screen and (max-width: 359px) and (max-resolution: 2dppx) {
+
+    /* Styles for very small or older phones */
     .atlas-layer {
         background-position:calc(30%);
         top: 0;
