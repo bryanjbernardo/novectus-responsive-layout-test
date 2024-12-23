@@ -186,7 +186,7 @@
         margin: 0 13%;
     }
     .landing-text {
-        top: 22%;
+        top: 20%;
         /* font-size: 9.6px; */
         /* align-items: end; */
 
@@ -273,6 +273,9 @@
     .testimonial-card img {
         max-width: 140px;
         height: auto;
+    }
+    .testimonial-card blockquote {
+        width: 120%;
     }
 }
 
