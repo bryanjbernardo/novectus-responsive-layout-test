@@ -1,21 +1,55 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const duplicateCards = (selector) => {
-        const track = document.querySelector(selector);
-        const container = track.parentElement; // Get the parent container
-        const containerWidth = container.offsetWidth; // Width of the container
-        const cardWidth = track.children[0].offsetWidth; // Width of a single card
-        const totalCards = Math.ceil((containerWidth * 2) / cardWidth); // Calculate the required number of cards
+document.addEventListener('DOMContentLoaded', function() {
+    const tracks = document.querySelectorAll('.testimonial-track');
+    
+    tracks.forEach(track => {
+        // Get all original cards
+        const originalCards = Array.from(track.children);
+        
+        // Clone each card twice to ensure smooth infinite scroll
+        originalCards.forEach(card => {
+            // First clone
+            const clone1 = card.cloneNode(true);
+            track.appendChild(clone1);
+            
+            // Second clone for extra smoothness
+            const clone2 = card.cloneNode(true);
+            track.appendChild(clone2);
+        });
 
-        // Duplicate cards until we have enough to cover the loop
-        while (track.children.length < totalCards) {
-            [...track.children].forEach((item) => {
-                const clone = item.cloneNode(true);
-                track.appendChild(clone);
-            });
+        // Function to reset animation
+        function resetAnimation() {
+            const firstCard = track.firstElementChild;
+            const cardWidth = firstCard.offsetWidth;
+            const gap = 20; // Match CSS gap value
+            const totalWidth = (cardWidth + gap) * originalCards.length;
+            
+            if (track.closest('.row2')) {
+                // For right-to-left scrolling row
+                if (Math.abs(track.offsetLeft) >= totalWidth) {
+                    track.style.transform = 'translateX(0)';
+                    track.style.transition = 'none';
+                    // Force reflow
+                    void track.offsetWidth;
+                    track.style.transition = '';
+                }
+            } else {
+                // For left-to-right scrolling row
+                if (Math.abs(track.offsetLeft) >= totalWidth) {
+                    track.style.transform = 'translateX(0)';
+                    track.style.transition = 'none';
+                    // Force reflow
+                    void track.offsetWidth;
+                    track.style.transition = '';
+                }
+            }
         }
-    };
 
-    // Duplicate cards for both rows
-    duplicateCards(".row1 .testimonial-track");
-    duplicateCards(".row2 .testimonial-track");
+        // Check animation reset every frame
+        function checkReset() {
+            resetAnimation();
+            requestAnimationFrame(checkReset);
+        }
+
+        checkReset();
+    });
 });

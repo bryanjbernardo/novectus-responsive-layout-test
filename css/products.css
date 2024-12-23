@@ -681,3 +681,140 @@
     /* Optional: You can also change the dropdown icon color if needed */
     filter: brightness(0) saturate(100%) invert(28%) sepia(97%) saturate(1124%) hue-rotate(134deg) brightness(93%) contrast(103%);
 }
+
+@media screen and (max-width: 1440px) {
+    /* Adjust hero section */
+    .landing {
+        height: 600px; /* Slightly reduce the height */
+        width: 100%;
+        
+    }
+
+    .product-hero-content {
+        max-width: 900px; /* Reduce max-width for better fit */
+        padding: 40px 20px 0; /* Adjust padding */
+    }
+
+    .product-hero-title {
+        font-size: 35px; /* Reduce font size */
+        margin-bottom: 30px; /* Adjust margin */
+    }
+
+    .product-hero-description {
+        font-size: 24px; /* Reduce font size */
+    }
+
+    /* Adjust product cards */
+    .products-list {
+        max-width: 1200px; /* Reduce max-width */
+        padding: 0 30px; /* Adjust padding */
+        gap: 60px; /* Reduce gap between cards */
+    }
+
+    .product-card {
+        min-height: 500px; /* Reduce minimum height */
+    }
+
+    .product-image-container {
+        padding: 30px; /* Reduce padding */
+    }
+
+    .product-image-container img {
+        max-height: 400px; /* Reduce max height of product images */
+    }
+
+    .product-info {
+        padding: 40px; /* Reduce padding */
+        gap: 20px; /* Reduce gap between elements */
+    }
+
+    .product-info h3 {
+        font-size: 38px; /* Reduce font size */
+    }
+
+    .product-info p {
+        font-size: 20px; /* Reduce font size */
+    }
+
+    .product-features li {
+        font-size: 18px; /* Reduce font size */
+        gap: 15px; /* Reduce gap */
+    }
+
+    .product-features li img {
+        width: 40px; /* Reduce icon size */
+        height: 40px;
+    }
+
+    /* Adjust shop section */
+    .product-shops-wrapper {
+        min-height: 120px; /* Reduce minimum height */
+    }
+
+    .product-shop-links {
+        gap: 80px; /* Reduce gap between shop links */
+        scale: 0.8;
+    }
+
+    /* Adjust learn more button */
+    .learn-more-btn {
+        width: 280px; /* Reduce button width */
+        height: 80px; /* Reduce button height */
+        padding: 20px 40px; /* Adjust padding */
+        font-size: 30px; /* Reduce font size */
+        scale: 0.9;
+        margin-left: -10px;
+    }
+
+    #dreamwell {   
+        scale: 0.9;
+        margin-top: -35px;
+        margin-bottom: -40px;
+    }
+
+    #rehmatone {
+        scale: 0.9;
+        margin-top: -35px;
+        margin-bottom: -40px;
+    }
+
+    #vitamini {
+        scale: 0.9;
+        margin-top: -35px;
+        margin-bottom: -40px;
+    }
+
+    #nutriqk {
+        scale: 0.9;
+        margin-top: -35px;
+        margin-bottom: -40px;
+    }
+
+    #herbs {
+        scale: 0.9;
+        margin-top: -35px;
+        margin-bottom: -40px;
+    }
+   
+    #superior {
+        scale: 0.9;
+        margin-top: -35px;
+        margin-bottom: -40px;
+    }
+
+    #actigraft {
+        scale: 0.9;
+        margin-top: -35px;
+        margin-bottom: -80px;
+    }
+
+    #recoverix {
+        scale: 0.9;
+        margin-bottom: -100px;
+        margin-top: 25px;
+    }
+
+   
+
+
+}

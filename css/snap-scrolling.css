@@ -1,0 +1,75 @@
+/* Add these styles for snap scrolling */
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+/* Add snap alignment to each main section */
+.hero-section,
+.vision-mission,
+.stats-section,
+.story-section,
+.map-section,
+.partners-section,
+.cta-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* Optional: Add smooth transition for better UX */
+.hero-section,
+.vision-mission,
+.stats-section,
+.story-section,
+.map-section,
+.partners-section,
+.cta-section {
+    transition: transform 0.5s ease;
+}
+
+/* Update scroll progress styles */
+.scroll-progress {
+    position: fixed;
+    right: 30px; /* Moved slightly further from edge */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap between dots */
+    z-index: 1000;
+    padding: 10px;
+}
+
+.scroll-dot {
+    width: 14px; /* Slightly larger dots */
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgba(141, 207, 79, 0.5); /* Light green, semi-transparent */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.scroll-dot:hover {
+    transform: scale(1.2);
+    background-color: #018F47; /* Darker green on hover */
+}
+
+.scroll-dot.active {
+    background-color: #018F47;
+    transform: scale(1.3);
+    border: 2px solid rgba(255, 255, 255, 0.8); /* White border for active dot */
+    box-shadow: 0 0 10px rgba(1, 143, 71, 0.3); /* Subtle glow effect */
+}
+
+
+@media screen and (max-width: 1440px) {
+    .scroll-dot {
+        scale: 0.8;
+    }
+    .scroll-progress {
+        scale: 0.9;
+    }
+}
+

@@ -12,6 +12,31 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.add('active');
         }
     });
+    // Dropdown functionality
+    const dropdowns = document.querySelectorAll('.secondary-nav-links li');
+    let hideTimeout;
+
+    dropdowns.forEach(dropdown => {
+        const submenu = dropdown.querySelector('ul');
+        if (submenu) {
+            dropdown.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout);
+                submenu.style.display = 'block';
+                submenu.style.opacity = '1';
+                submenu.style.transform = 'translateY(0)';
+            });
+
+            dropdown.addEventListener('mouseleave', function() {
+                hideTimeout = setTimeout(() => {
+                    submenu.style.opacity = '0';
+                    submenu.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        submenu.style.display = 'none';
+                    }, 300);
+                }, 500); // Delay of 500ms before hiding the dropdown
+            });
+        }
+    });
 
     // Handle navbar visibility on scroll with hysteresis
     function updateNavbar() {

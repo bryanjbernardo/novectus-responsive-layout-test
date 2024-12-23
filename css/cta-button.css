@@ -34,7 +34,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+   
 
     margin: 0 auto 0;
 }
@@ -58,6 +58,7 @@
     text-align: center;
     line-height: 1.25;
     margin-top: 0;
+    margin-bottom: 60px;
 }
 
 .cta-button {
@@ -72,7 +73,7 @@
     font-size: 36px;
     font-weight: 700;
     text-decoration: none;
-    margin-top: 10px;
+   
     transition: all 0.3s ease;
     padding: 20px 40px;
 }
@@ -89,25 +90,28 @@
         max-width: 1400px;
         margin: 90px auto;
         padding: 60px 30px;
-        height: 400px;
+        height: 600px;
     }
 
     .cta-content {
         padding: 0 20px;
-        gap: 25px;
+      
     }
 
     .cta-title {
         font-size: 32px;
         height: auto;
-        margin-top: -30px;
+        line-height: 1.2;
+        margin-bottom: 50px;
+        margin-top: 0;
+       
     }
 
     .cta-text {
         font-size: 20px;
         max-width: 800px;
-        margin-top: -20px;
-        margin-bottom: 0;
+        margin-top: -30px;
+        margin-bottom: 20px;
     }
 
     .cta-button {

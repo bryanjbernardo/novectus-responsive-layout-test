@@ -220,6 +220,7 @@
     }
     .product-group {
         height: 33svh;
+        max-width: unset;
     }
     
     #about-us {
@@ -257,14 +258,22 @@
     }
 
     .testimonials-header h2 {
-        margin-left: 12%;
-        margin-right: 12%;
+        margin-left: 8%;
+        margin-right: 8%;
     }
     .testimonials-header p {
-        margin-left: 12%;
-        margin-right: 12%;
+        margin-left: 14%;
+        margin-right: 14%;
 
-    } 
+    }
+    .testimonial-card {
+        max-width: 80vw;
+        height: 24vh;
+    }
+    .testimonial-card img {
+        max-width: 140px;
+        height: auto;
+    }
 }
 
 /* For iPhone SE-like phones with 16:9 aspect ratio */
@@ -301,11 +310,20 @@
         gap: 5vw;
     }
     .about-content {
+        min-width: 70vw;
         gap: 2em;
         
     }
     .about-image img {
         min-width: 65vw;
+    }
+
+    .testimonial-card {
+        max-width: 85vw;
+    }
+    .testimonial-card img {
+        max-width: 120px;
+        height: auto;
     }
 }
 

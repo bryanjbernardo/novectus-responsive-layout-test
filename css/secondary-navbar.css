@@ -77,65 +77,33 @@
     position: absolute;
     top: calc(100% + 15px);
     left: -20px;
-    background-color: #FFFFFF;
-    min-width: 250px;
-    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    min-width: 280px;
+    padding: 25px 0;
     box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
     border: 1px solid rgba(1, 142, 71, 0.1);
-    z-index: 1001;
+    backdrop-filter: blur(10px);
+    transform-origin: top;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
 }
 
-/* Enhanced arrow animation */
-.arrow {
-    display: inline-flex;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-    margin-left: 5px;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Show dropdown on hover with animation */
+.secondary-nav-links li:hover ul {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
-.nav-links li:hover .arrow {
-    transform: rotate(180deg);
-}
-
-/* Add subtle border top to dropdown */
-.nav-links li ul::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    left: 20px;
-    right: 20px;
-    height: 1px;
-    background: linear-gradient(
-        to right,
-        rgba(1, 142, 71, 0.1),
-        rgba(141, 207, 79, 0.1)
-    );
-}
-
-/* Add hover glow effect */
-.nav-links li ul li a:hover {
-    text-shadow: 0 0 1px rgba(1, 142, 71, 0.3);
-}
-
-/* Add hover intent area */
-.nav-links li ul::after {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    background: transparent;
-}
-
-/* Add animation keyframes */
-@keyframes fadeInUp {
+/* Remove the animation keyframes and li:hover ul animation */
+@keyframes dropdownEnter {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(-10px);
     }
     to {
         opacity: 1;
@@ -143,59 +111,15 @@
     }
 }
 
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.secondary-nav-links li:hover ul {
+    animation: none;
 }
-
-/* Apply animations to dropdown items */
-.nav-links li ul li {
-    animation: fadeInUp 0.3s ease forwards;
-    opacity: 0;
-}
-
-.nav-links li ul li:nth-child(1) { animation-delay: 0.1s; }
-.nav-links li ul li:nth-child(2) { animation-delay: 0.2s; }
-.nav-links li ul li:nth-child(3) { animation-delay: 0.3s; }
-.nav-links li ul li:nth-child(4) { animation-delay: 0.4s; }
-
-/* NAV BAR ENDS */
-
-/* NAV BAR ANIMATIONS */
-
-/* Update the active state color */
-.nav-links li a.active {
-    color: #018E47 !important;  /* Using !important to ensure it takes precedence */
-    font-weight: 600;
-}
-
-/* Keep hover state separate and less specific */
-.nav-links li a:hover,
-.nav-links li a:focus {
-    color: rgb(7, 131, 69);
-    font-weight: 600;
-}
-
-
-/* Add this to prevent conflicts */
-body:not(.home) .fixed-navbar {
-    display: none;
-}
-/* Rest of the styles remain the same but with 'secondary-' prefix */
-/* ... (copy remaining styles from global.css but update class names) */
 
 /* Dropdown items styling */
 .secondary-nav-links li ul li {
-    padding: 12px 30px;
+    padding: 10px 20px;
     margin: 0;
     transition: all 0.3s ease;
-    position: relative;
 }
 
 .secondary-nav-links li ul li a {
@@ -205,10 +129,9 @@ body:not(.home) .fixed-navbar {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 8px 0;
+    padding: 8px 0 8px 20px;
     position: relative;
     transition: all 0.3s ease;
-    padding-left: 20px;
 }
 
 /* Fix the circle before dropdown items */
@@ -231,18 +154,6 @@ body:not(.home) .fixed-navbar {
     opacity: 1;
 }
 
-/* Add space for longer menu items */
-.secondary-nav-links li ul {
-    min-width: 300px;
-}
-
-/* Show dropdown on hover with animation */
-.secondary-nav-links li:hover ul {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* Hover effect for dropdown items */
 .secondary-nav-links li ul li:hover {
     background: linear-gradient(
@@ -255,9 +166,26 @@ body:not(.home) .fixed-navbar {
 .secondary-nav-links li ul li a:hover {
     color: #018E47;
     transform: translateX(8px);
+    text-shadow: 0 0 1px rgba(1, 142, 71, 0.3);
 }
 
-/* Enhanced arrow animation */
+/* Add dropdown entrance animation */
+.secondary-nav-links li:hover ul {
+    animation: dropdownEnter 0.3s ease forwards;
+}
+
+@keyframes dropdownEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Arrow animation */
 .secondary-nav-links .arrow {
     display: inline-flex;
     align-items: center;
@@ -271,7 +199,7 @@ body:not(.home) .fixed-navbar {
     transform: rotate(180deg);
 }
 
-/* Add subtle border top to dropdown */
+/* Subtle border top to dropdown */
 .secondary-nav-links li ul::before {
     content: '';
     position: absolute;
@@ -286,12 +214,7 @@ body:not(.home) .fixed-navbar {
     );
 }
 
-/* Add hover glow effect */
-.secondary-nav-links li ul li a:hover {
-    text-shadow: 0 0 1px rgba(1, 142, 71, 0.3);
-}
-
-/* Add hover intent area */
+/* Hover intent area */
 .secondary-nav-links li ul::after {
     content: '';
     position: absolute;
@@ -302,7 +225,7 @@ body:not(.home) .fixed-navbar {
     background: transparent;
 }
 
-/* Add animation keyframes */
+/* Animation keyframes */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -314,39 +237,22 @@ body:not(.home) .fixed-navbar {
     }
 }
 
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 /* Apply animations to dropdown items */
-.secondary-nav-links li ul li {
-    animation: fadeInUp 0.3s ease forwards;
-    opacity: 0;
-}
-
 .secondary-nav-links li ul li:nth-child(1) { animation-delay: 0.1s; }
 .secondary-nav-links li ul li:nth-child(2) { animation-delay: 0.2s; }
 .secondary-nav-links li ul li:nth-child(3) { animation-delay: 0.3s; }
 .secondary-nav-links li ul li:nth-child(4) { animation-delay: 0.4s; }
 
-/* Update the active state color */
-.secondary-nav-links li a.active {
-    color: #018E47 !important;
-    font-weight: 600;
+/* Prevent conflicts with main navbar */
+body:not(.home) .fixed-navbar {
+    display: none;
 }
 
 /* Keep hover state separate and less specific */
 .secondary-nav-links li a:hover,
 .secondary-nav-links li a:focus {
     color: rgb(7, 131, 69);
-    font-weight: 600;
+    font-weight: 700; /* A bit bolder than normal, but not too bold */
 }
 
 /* Add smooth transitions for all hover effects */
@@ -423,7 +329,7 @@ body:not(.home) .fixed-navbar {
     }
 
     .secondary-nav-links {
-        right: 120px;
+        right: 70px;
         top: 28px;
         width: 400px;
         gap: 45px;
@@ -440,19 +346,27 @@ body:not(.home) .fixed-navbar {
         font-weight: 600;
     }
 
+    .secondary-nav-links img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        transition: all 0.5s ease;
+       
+    }
+
     /* Dropdown styles */
     .secondary-nav-links li ul {
         top: calc(100% + 12px);
-        min-width: 220px;
-        padding: 12px 0;
+        min-width: 230px;
+        padding: 20px 0;
     }
 
     .secondary-nav-links li ul li {
-        padding: 6px 20px;
+        padding: 10px 30px;
     }
 
     .secondary-nav-links li ul li a {
-        font-size: 15px;
+        font-size: 14px;
         padding: 5px 0;
         padding-left: 16px;
     }
@@ -461,21 +375,7 @@ body:not(.home) .fixed-navbar {
         width: 5px;
         height: 5px;
     }
-
-    .arrow {
-        width: 14px;
-        height: 14px;
-        margin-left: -5px;
-        margin-top: 2px;
-    }
-
-    .secondary-nav-links li:hover .arrow {
-        transform: rotate(180deg) scale(0.9);
-    }
-
-    .secondary-nav-links li ul li .arrow {
-        width: 12px;
-        height: 12px;
-        margin-left: -3px;
-    }
+    
+    
+    
 }

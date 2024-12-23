@@ -1,0 +1,156 @@
+/* Partners Section
+-------------------------------------------------- */
+.partners-section {
+    background-color: #fff;
+    text-align: center;
+    margin-top: -150px; /* Reduced margin-top to bring it closer to map section */
+}
+
+.partners-content {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+.partners-section .section-title {
+    color: #019447;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.partners-section .section-text {
+    color: #181818;
+    font-size: 28px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Partners Grid - Updated for single line */
+.partners-grid {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.partner-logo {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: scale(1.1);
+}
+
+.partner-logo img {
+    height: 100%;
+    object-fit: contain;
+    max-width: 220px;
+}
+
+.edited-ko-da-logo {
+    margin-right: 20px;
+}
+
+/* Shop Links - Updated for single line */
+.shop-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+    gap: 60px;
+    /* Removed border-top */
+}
+
+.shop-link {
+    height: 45px; /* Slightly reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.shop-link:hover {
+    transform: scale(1.1);
+}
+
+.shop-link img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.shop-link:hover img {
+    opacity: 1;
+}
+
+
+
+
+/* Partners Section Animation */
+.partners-content,
+.partner-logo,
+.shop-links {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.partners-content.fade-in,
+.partner-logo.fade-in,
+.shop-links.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add stagger effect for partner logos */
+.partner-logo:nth-child(1) { transition-delay: 0.1s; }
+.partner-logo:nth-child(2) { transition-delay: 0.2s; }
+.partner-logo:nth-child(3) { transition-delay: 0.3s; }
+.partner-logo:nth-child(4) { transition-delay: 0.4s; }
+.partner-logo:nth-child(5) { transition-delay: 0.5s; }
+.partner-logo:nth-child(6) { transition-delay: 0.6s; }
+
+/* Shop links animation */
+.shop-link {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.shop-link.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shop-link:nth-child(1) { transition-delay: 0.7s; }
+.shop-link:nth-child(2) { transition-delay: 0.8s; }
+.shop-link:nth-child(3) { transition-delay: 0.9s; }
+.shop-link:nth-child(4) { transition-delay: 1.0s; }
+.shop-link:nth-child(5) { transition-delay: 1.1s; }
+
+@media screen and (max-width: 1440px) {
+
+    
+    .partners-section {
+        scale: 0.7;
+        margin-top: -500px; /* Reduced margin-top to bring it closer to map section */
+        margin-left: 3%;
+       
+    }
+    
+}
