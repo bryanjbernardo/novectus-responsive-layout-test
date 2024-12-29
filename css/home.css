@@ -202,7 +202,7 @@ html {
 }
 
 .landing-text {
-    max-width: 526px; /*Adjust for screens > 1920px*/
+    max-width: 530px; /*Adjust for screens > 1920px*/
     min-width: 230px;
     display: flex;
     flex-direction: column;
@@ -285,7 +285,7 @@ html {
     /* fixed to bottom of container to prevent floating on different screen ratio and size */
     position: absolute;
     aspect-ratio: 1105/737;
-    right: 1.5%;
+    right: 1%;
     bottom: 0;
 }
 
