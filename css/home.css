@@ -116,7 +116,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 20px; /* Increased gap between dots */
-    z-index: 1000;
+    z-index: 900;
     padding: 10px;
 }
 
@@ -434,61 +434,61 @@ html {
 /* Global Presence Section
 -------------------------------------------------- */
 .map-section {
-    width: 1920px;
-    height: 1225px;
+    width: 100vw;
+    /* height: 1225px; */
     background-color: #FFFFFF;
     padding-top: 86px;
     position: relative;
     /* max-width: 1920px; */
     margin: 0 auto; /* Center the content */
-    max-width: 100vw;
-    min-width: 1580px; /*preserve alignment of map and markers*/
+    /* max-width: 100vw; */
+    /* min-width: 1580px;  */
+    /*preserve alignment of map and markers*/
 }
 
 .map-content {
-    width: 90%; /* Changed from fixed width */
+    width: 90%;  /* Changed from fixed width */
     max-width: 1473px;
     margin: 0 auto;
     text-align: center;
 }
 
 .map-title {
-    font-size: 48px;
+    font-size: 3em;
     color: #018F47;
     text-align: center;
-    width: 785px;
-    margin: 0 auto 40px;
+    /* width: 785px; */
+    margin: 0 auto 0.83333em;
+    padding: 0 29.56vw;
     
 }
 
 .map-description {
-    font-size: 28px;
-    letter-spacing: -2%;
-    line-height: auto;
+    font-size: 1.75em;
+    /* letter-spacing: -2%;
+    line-height: auto; */
     color: #181818;
-    width: 1001px;
+    /* width: 1001px; */
     margin: 0 auto 5px;
     text-align: center;
-   
+    padding: 0 23.9323vw;
 }
 
 .map-description-2 {
-    font-size: 28px;
-    letter-spacing: -2%;
-    line-height: auto;
+    font-size: 1.75em;
     color: #181818;
-    width: 1001px;
+    /* width: 1001px; */
     margin: 0 auto 5px;
     text-align: center;
-    margin-top:20px;
-
+    margin-top: 20px;
+    padding: 0 23.9323vw 1.25em;
 }
 /* Map container */
 .map-container {
     position: relative;
-    width: 100%; /* Changed from fixed width */
-    max-width: 1371.77px;
-    height: 675px;
+ /* Changed from fixed width */
+    width: 93.12763068567549%;
+    /* height: 675px; */
     margin: 20px auto 0;
     /* display: inline-block; */
 }
@@ -532,14 +532,15 @@ html {
     width: 100%;
     height: 100%;
     top: 0;
+    /* bottom: 100%; */
     left: 0;
 }
 
 /* Update the marker-dot class */
 .marker-dot {
     position: relative;
-    width: 16px;
-    height: 16px;
+    width: 1em;
+    height: 1em;
     background-color: #018F47;
     border-radius: 50%;
     display: flex;
@@ -551,8 +552,8 @@ html {
 .marker-dot::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 1.25em;
+    height: 1.25em;
     border: 2px solid #018F47;
     border-radius: 50%;
 }
@@ -571,7 +572,7 @@ html {
     position: absolute;
     display: flex;
     align-items: center;
-    gap: 10px; /* Add space between flag and country name */
+    gap: 0.625em; /* Add space between flag and country name */
     transition: transform 0.3s ease; /* Add transition for smooth scaling */
     transform-origin: center; /* Set transform origin to center */
     z-index: 1; /* Default z-index */
@@ -585,8 +586,8 @@ html {
 
 /* Update the flag and text hover effects */
 .flag-icon {
-    width: 50px;
-    height: 30px;
+    width: 3.125em;
+    height: 1.875em;
     object-fit: contain;
     transition: transform 0.3s ease;
     transform-origin: center;
@@ -595,7 +596,7 @@ html {
 
 .country-name {
     color: #C6C6C6;
-    font-size: 20px;
+    font-size: 1.25em;
     text-transform: uppercase;
     white-space: nowrap;
     margin: 0 5px;
@@ -784,42 +785,42 @@ html {
 
 /* Update marker line styles for all countries */
 .usa-marker .marker-line { 
-    width: 100px;
+    width: 5.20833vw;
     transform-origin: left;
     transform: scaleX(0);
     animation: drawLine 1s ease-out forwards 0.2s;
 }
 
 .estonia-marker .marker-line { 
-    width: 110px;
+    width: 5.72916667vw;
     transform-origin: left;
     transform: scaleX(0);
     animation: drawLine 1s ease-out forwards 0.4s;
 }
 
 .austria-marker .marker-line { 
-    width: 140px;
+    width: 8.75em;
     transform-origin: left;
     transform: scaleX(0);
     animation: drawLine 1s ease-out forwards 0.6s;
 }
 
 .israel-marker .marker-line { 
-    width: 170px;
+    width: 10.625em;
     transform-origin: left;
     transform: scaleX(0);
     animation: drawLine 1s ease-out forwards 0.8s;
 }
 
 .taiwan-marker .marker-line { 
-    width: 70px;
+    width: 4.375em;
     transform-origin: right; /* Changed to right for Asian countries */
     transform: scaleX(0);
     animation: drawLine 1s ease-out forwards 1s;
 }
 
 .philippines-marker .marker-line { 
-    width: 70px;
+    width: 4.375em;
     transform-origin: right; /* Changed to right for Asian countries */
     transform: scaleX(0);
     animation: drawLine 1s ease-out forwards 1.2s;
@@ -845,18 +846,18 @@ html {
 }
 
 .israel-marker {
-    top: 42%;
-    left: 31%;
+    top: 44%;
+    left: 33%;
 }
 
 .austria-marker {
     top: 33%;
-    left: 27%;
+    left: 28%;
 }
 
 .estonia-marker {
-    top: 22%;
-    left: 31%;
+    top: 24%;
+    left: 34%;
 }
 
 /* Add this keyframe for right-aligned lines */
@@ -886,8 +887,8 @@ a {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 16px; /* Match dot size */
-    height: 16px; /* Match dot size */
+    width: 1em; /* Match dot size */
+    height: 1em; /* Match dot size */
     background: rgba(1, 142, 71, 0.3); /* Semi-transparent version of dot color */
     border-radius: 50%;
     transform: translate(-50%, -50%);
@@ -1240,7 +1241,7 @@ a {
 /* About Us Section - Full width with split layout */
 #about-us {
     /* margin-top: 120px; */
-    height: 90vh;
+    min-height: 90vh;
     min-width: 100vw;
     background-color: #E7F5D9;
 

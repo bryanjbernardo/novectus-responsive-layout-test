@@ -1,166 +1,161 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Extra Large Desktops */
 @ media screen and (min-width: 2560px) {
-    .product-group {
-        font-size: 18px;
-        min-height: 40vh;
-    }
 }
 
-
-
+/* Large Desktops */
 @ media screen and (min-width: 1920px) {
-    .product-group {
-        font-size: 16px; /* Standard Large Desktops  */
-        min-height: 32vh;
-    }
-}
-
-@ media screen and (min-width: 1440px) and (max-width: 1919px) {
-    .product-group {
-        font-size: 15px; /* Medium Desktops  */
-        min-height: 36vh;
-        max-height: 37.5vh;
-    }
-}
-
-@ media screen and (min-width: 1280px) and (max-width: 1439px) and (orientation: landscape) {
-    .product-group {
-        font-size: 14.5px; /* Small Desktops on landscape */
-        min-height: 32vh;
-        /* max-height: 34vh; */
-    }
-}
-/* Tablets */
-@ media screen and (min-width: 768px) and (max-width: 1279px)  {
-    .product-group {
-        font-size: 14px; 
-        min-height: 28vh;
-        max-height: 60svh;
-    }
-}
-/*FHD-QHD phones*/
-@ media screen and (min-width: 1080px) and (orientation: portrait) {
-    .product-group {
-        font-size: 23px;
-        min-height: 24svh;
-    }
-}
-
-/* Large Phones and Compact Tablets */
-/* Includes high-DPI devices like Google Pixel 7 Pro, Samsung Galaxy Ultra series, and small tablets with CSS widths between 480px–767px */
-@ media screen and (max-width: 767px) {
-
-}
-
-@ media screen and (min-width: 414px) and (max-width: 480px) {
     body {
-        font-size: 12px; 
+        font-size: 16px; /*default size*/
     }
-    h2 {
-        font-size: 2.403846em;
-        line-height: 1.25;
+}
 
-        padding: 0 10vw 0;
+/* Medium Desktops */
+@ media screen and (min-width: 1600px) and (max-width: 1919px) {
+}
+
+/* Small Desktops */
+@ media screen and (min-width: 1280px) and (max-width: 1599px) {
+}
+
+/* Adjusted Bento Box effects and Map marker-lines for mobile devices */
+@media screen and (max-width: 1279px) {
+    .product-group.visible {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .product-group.visible img {
+        transform: scale(1.05);
+    }
+    .product-group.visible figcaption {
+        opacity: 1;
+    }
+    .product-group.visible h3,
+    .product-group.visible p,
+    .product-group.visible a {
+        transform: translateY(0);
+    }
+    /* .product-group.visible a {
+        background: #f1f1f1;
+        color: #018E47;
+        transform: scale(1.03);
+    } */
+
+    .marker-line {
+        display: none;
+    }
+    .country-name {
+        color: #7C7C7C;
     }
 
+}
+
+/* PENDING: Add 2 media queries that targets phones/tablets in landscape */
+
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1279px) and (orientation: portrait) {
+    body {
+        font-size: clamp(11px, 1.5625vw, 14px); 
+    }
+    .scroll-progress { 
+        right: 3vw;
+    }
     .atlas-layer {
         background-position:calc(30%);
+        top: 0;
+        height: 100%;
     }
     .landing-content {
         padding: 0;
-        margin: 0 10%;
+        margin: 0 8%;
     }
     .landing-text {
-        top: 24%;
-        /* align-items: end; */
-
-        gap: 2.8em;
+        top: 20%;
+        gap: 3.5em;
     }
     .text-content {
-        max-width: 70vw;
+        max-width: 52vw;
         gap: 2.4em;
     }
-    .landing-text .learn-more-btn {
-       width: 60%;
-    }
-    
-    .product-flex {
-        padding: 0 14vw 0;
-    }
-    .product-group {
-        min-height: 38.5svh;
-    }
-}
-
-/* HD Portrait Phones ONLY */
-@ media screen and (width: 720px) and (orientation: portrait) and (min-aspect-ratio: 9/16) {
-    .atlas-layer {
-        background-position:calc(35%);
-        top: 0;
-        height: 100%;
-    }
-    /* Linear Gradient Overlay for focused text */
-    .atlas-layer::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            180deg, 
-            rgba(0, 0, 0, 0.3) 0%, 
-            rgba(255, 255, 255, 0.07) 20%, 
-            rgba(255, 255, 255, 0.07) 70%, 
-            rgba(0, 0, 0, 0.3) 100%
-        );
-        pointer-events: none; /* Ensures it doesn't interfere with interactions */
-        z-index: 1; /* Keeps the gradient above the background image but below content */
-    }
-    .landing-content {
-        padding: 0;
-        margin: 0 15%; /*center hero-text block*/
-    }
-    .landing-text {
-        top: 26%;
-        font-size: 15px;
-        align-items: start;
-        
-        gap: 3.6em;
-    }
-    .text-content {
-        max-width: 70vw;
-        gap: 3em;
+    .text-content p {
+        max-width: 46vw;
     }
     .landing-text .learn-more-btn {
-       width: 60%;
+        width: 54%;
     }
     .landing-image {
-        width: 100vw; /* Occupy almost the entire viewport width */
-        right: -35%; 
-        bottom: 0;
+        width: 80vw;
+        right: -8%; 
     }
 
+    .map-section > h2 {
+        padding: 0 12%;
+    }
+    .map-section > p {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .product-flex {
+        padding: 0 10vw 12vh;
+    }
     .product-group {
-        font-size: 15px; 
-        min-height: 24svh;
+        height: 28svh;
+        max-width: unset;
+    }
+
+    #about-us {
+        min-height: 65vh;
+        
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    .about-content {
+        width: 36vw;
+    }
+    .about-content h2 {
+        padding-bottom: 0;
+    }
+    #about-us .learn-more-btn {
+        width: 68%;
+        line-height: 1.05;
+    }
+    
+    .testimonials-header p {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .testimonial-card {
+        max-width: 56vw;
+        height: 20vh;
+    }
+    .testimonial-card img {
+        max-width: 160px;
+    }
+    .testimonial-card blockquote {
+        width: 120%;
     }
 }
 
-/* Standard Phones (DPR between 2 and 3.5, width between 360px and 480px) */
-@media screen and (min-width: 360px) and (max-width: 480px) and (min-resolution: 2dppx) and (max-resolution: 3.5dppx)  {
-
-     /* Styles for standard phones like iPhones and modern Android devices */
+/* IMPORTANT BREAKPOINT */
+/* General/Fallback Styles for Mobile and Small Tablets */
+/* Applies to all portrait devices with widths up to 767px */
+@media screen and (max-width: 767px) and (orientation: portrait) {
     body {
         font-size: 11px; 
     }
     h2 {
-        /* font-size: 2.403846em; */
-        /* padding: 0 10vw 0; */
         font-size: 2.6em;
     }
-
+    .scroll-progress { 
+        right: 2vw;
+        scale: 0.95;
+    }
     .atlas-layer {
-        background-position:calc(30%);
+        background-position:calc(40%);
         top: 0;
         height: 100%;
     }
@@ -173,9 +168,9 @@
         height: 100%;
         background: linear-gradient(
             180deg, 
-            rgba(0, 0, 0, 0.2) 0%, 
-            rgba(255, 255, 255, 0.05) 22%, 
-            rgba(255, 255, 255, 0.05) 75%, 
+            rgba(0, 0, 0, 0.1) 0%, 
+            rgba(255, 255, 255, 0.05) 18%, 
+            rgba(255, 255, 255, 0.05) 62%, 
             rgba(0, 0, 0, 0.2) 100%
         );
         pointer-events: none; /* Ensures it doesn't interfere with interactions */
@@ -183,13 +178,119 @@
     }
     .landing-content {
         padding: 0;
-        margin: 0 13%;
+        margin: 0 12%;
     }
     .landing-text {
         top: 20%;
+        gap: 3.5em;
+    }
+    .text-content {
+        max-width: 62vw;
+        gap: 2.2em;
+    }
+    .landing-text .learn-more-btn {
+        width: 60%;
+    }
+    .landing-image {
+        width: 80vw;
+        right: -20%; 
+    }
+
+    .map-section > h2 {
+        padding: 0 12%;
+    }
+    .map-section > p {
+        padding: 0 15%;
+    }
+
+    .product-flex {
+        padding: 0 10vw 14vh;
+    }
+    .product-group {
+        height: 29svh;
+        max-width: unset;
+    }
+
+    #about-us {
+        min-height: 90vh;
+        flex-flow: column-reverse;
+        align-items: center;
+        justify-content: space-around;
+        padding: 7vw;
+
+        overflow: hidden;
+    }
+    .about-image img {
+        max-width: unset;
+        min-width: 85vw;
+        margin: 6% auto;
+    }
+    .about-content {
+        margin-right: unset;
+        aspect-ratio: unset;
+
+        width: 85vw;
+    }
+    .about-content h2 {
+        padding-bottom: 0;
+        /* width: 100%; */
+    }
+    #about-us .learn-more-btn {
+        width: 48%;
+        line-height: 1.05;
+    }
+
+    .testimonials-header p {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .testimonial-card {
+        max-width: 68vw;
+        height: 22vh;
+    }
+    .testimonial-card img {
+        max-width: 150px;
+    }
+    .testimonial-card blockquote {
+        width: 120%;
+    }
+
+}
+
+/* General Styles for Standard and Modern Smartphones
+   - Targeting devices with DPR between 2 and 4 and viewport widths ≤ 480px.
+   - Includes most modern Android devices, iPhones, and slim foldable phones.
+   - Examples: Samsung Galaxy S series, iPhone 12-14 series, and Galaxy Z Flip/Fold. */
+@media screen and (max-width: 480px) and (min-resolution: 2dppx) and (max-resolution: 4dppx)  {
+
+    body {
+        font-size: 11px; 
+    }
+    .scroll-progress { 
+        right: 1vw;
+        scale: 0.9;
+    }
+    .atlas-layer {
+        background-position:calc(30%);
+    }
+    .atlas-layer::before {
+        background: linear-gradient(
+            180deg, 
+            rgba(0, 0, 0, 0.1) 0%, 
+            rgba(255, 255, 255, 0.05) 17%, 
+            rgba(255, 255, 255, 0.05) 70%, 
+            rgba(0, 0, 0, 0.2) 100%
+        );
+
+    }
+    .landing-content {
+        padding: 0;
+        margin: 0 13%;
+    }
+    .landing-text {
+        top: 18%;
         /* font-size: 9.6px; */
         /* align-items: end; */
-
         gap: 2.5em;
     }
     .landing-text h1 {
@@ -202,13 +303,13 @@
         max-width: 70vw;
         gap: 2em;
     }
-    .landing-text .learn-more-btn {
-        width: 60%;
-    }
     .landing-image {
         width: 90vw;
         right: -25%; 
-        bottom: 0;
+    }
+
+    .nav-logo {
+        
     }
 
     #bento-box h2 {
@@ -224,37 +325,20 @@
     }
     
     #about-us {
-        height: 95vh;
-        flex-flow: column-reverse;
-        align-items: center;
-        justify-content: space-around;
-        padding: 7vw;
-
-        overflow: hidden;
+        /* height: 100vh; */
     }
     .about-image img {
-       
-        min-width: 75vw;
-        /* margin: 12% auto; */
+        min-width: 80vw;
     }
     .about-content {
-        
         /* padding: 15% 0; */
         /* margin-top: 8%; */
-        margin-right: unset;
-
-        min-width: 75vw;
-        /* height: 100%; */
+        width: 80vw;
+        
         gap: 2.2em;
-        aspect-ratio: unset;
-    }
-    .about-content h2 {
-        padding-bottom: 0;
-        /* width: 115%; */
     }
     #about-us .learn-more-btn {
         width: 57%;
-        line-height: 1.05;
     }
 
     .testimonials-header h2 {
@@ -264,7 +348,6 @@
     .testimonials-header p {
         margin-left: 14%;
         margin-right: 14%;
-
     }
     .testimonial-card {
         max-width: 80vw;
@@ -272,14 +355,13 @@
     }
     .testimonial-card img {
         max-width: 140px;
-        height: auto;
-    }
-    .testimonial-card blockquote {
-        width: 120%;
     }
 }
 
-/* For iPhone SE-like phones with 16:9 aspect ratio */
+/* Specific Styles for iPhone SE (2nd Gen and Later)
+   - Focused on devices with 16:9 aspect ratio and viewport widths between 360px and 375px.
+   - Limited to devices with DPR of 2 for accurate styling.
+   - Examples: iPhone SE (2nd/3rd Gen), older 16:9 Android phones. */
 @media screen and (min-width: 360px) and (max-width: 375px) and (max-resolution: 2dppx) and (max-aspect-ratio: 9/16) {
 
     body {
@@ -303,22 +385,20 @@
     }
     .landing-image {
         width: 80vw;
-        right: -25%; 
-        bottom: 0;
     }
     
     #about-us {
-        height: 100vh;
+        /* height: 100vh; */
         justify-content: center;
         gap: 5vw;
     }
     .about-content {
-        min-width: 70vw;
+        width: 80vw;
         gap: 2em;
         
     }
     .about-image img {
-        min-width: 65vw;
+        min-width: 80vw;
     }
 
     .testimonial-card {
@@ -326,68 +406,104 @@
     }
     .testimonial-card img {
         max-width: 120px;
-        height: auto;
     }
 }
 
-/* Small and Low-DPI Phones (CSS width < 360px) */
-@ media screen and (max-width: 359px) and (max-resolution: 2dppx) {
+/* Styles for Tiny Phones or Older/Niche Devices
+   - Designed for devices with viewport widths < 360px and DPR of 2.
+   - Covers smaller screens such as the iPhone 4s and certain niche or legacy devices.
+   - Examples: iPhone 4s, older Android phones, and some compact modern devices. */
+@media screen and (max-width: 359px) and (max-resolution: 2dppx) {
+
+    body {
+        font-size: 8px;
+    }
+    .scroll-progress { 
+        right: 1vw;
+        scale: 0.8;
+    }
 
     /* Styles for very small or older phones */
     .atlas-layer {
-        background-position:calc(30%);
+        background-position:calc(25%);
         top: 0;
         height: 100%;
     }
     .atlas-layer::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         background: linear-gradient(
             180deg, 
-            rgba(0, 0, 0, 0.2) 0%, 
-            rgba(255, 255, 255, 0.05) 20%, 
-            rgba(255, 255, 255, 0.05) 80%, 
+            rgba(0, 0, 0, 0.1) 0%, 
+            rgba(255, 255, 255, 0.05) 22%, 
+            rgba(255, 255, 255, 0.05) 72%, 
             rgba(0, 0, 0, 0.2) 100%
         );
-        pointer-events: none; /* Ensures it doesn't interfere with interactions */
-        z-index: 1; /* Keeps the gradient above the background image but below content */
+        
     }
     .landing-content {
         padding: 0;
-        margin: 0 8%;
+        margin: 0 9%;
     }
     .landing-text {
         top: 22%;
-        font-size: 8.8px;
-        /* align-items: end; */
+        /* font-size: 8.8px; */
 
-        gap: 2em;
+        gap: 1.8em;
+    }
+    .landing-text h1 {
+        font-size: 2.816667em;
+    }
+    .landing-text p {
+        font-size: 1.73333527em;
     }
     .text-content {
-        max-width: 70vw;
-        gap: 2.1em;
+        max-width: 68vw;
+        gap: 2.2em;
     }
     .landing-text .learn-more-btn {
-        width: 60%;
+        width: 52%;
     }
     .landing-image {
         width: 70vw;
         right: -5%; 
-        bottom: 0;
     }
 
+    .nav-logo {
+        top: 12%;
+    }
+
+    #bento-box h2 {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
     .product-flex {
-        padding: 0 6vw 0;
+        padding: 0 8vw 12vh;
     }
     .product-group {
-        font-size: 9.5px; 
-        min-height: 30svh;
+        height: 40svh;
+        max-width: unset;
     }
 
+    #about-us {
+        height: 110vh;
+        padding: 8vw;
+    }
+    .about-image img {
+        min-width: 80vw;
+    }
+    .about-content {
+        width: 80vw;
+        gap: 2em;
+    }
+    #about-us .learn-more-btn {
+        width: 56%;
+    }
+
+    .testimonial-card {
+        height: 28vh;
+    }
+    .testimonial-card img {
+        max-width: 112px;
+    }
 }
 
 

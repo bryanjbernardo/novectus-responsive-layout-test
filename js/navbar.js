@@ -1,25 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.querySelector('.fixed-navbar');
-    if (!navbar) return;
-
     const navLogo = document.querySelector('.nav-logo');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
     const scrollThreshold = 50;
     const isAboutPage = window.location.pathname.includes('about.html');
     const isIndexPage = window.location.pathname === '/' || window.location.pathname.includes('index.html');
     let lastScroll = 0;
     let ticking = false;
 
+    if (!navbar) return;
+
     function updateNavbar() {
         const currentScroll = window.pageYOffset;
         const shouldScroll = !isIndexPage || currentScroll > scrollThreshold;
 
+        // Toggle scrolled state
         navbar.classList.toggle('scrolled', shouldScroll);
         navLogo?.classList.toggle('shrink', shouldScroll);
 
+        // Hide the navbar on scroll down for the index page
         if (isIndexPage && !isAboutPage) {
             navbar.style.transform = currentScroll > lastScroll && currentScroll > scrollThreshold
                 ? 'translateY(-100%)'
                 : 'translateY(0)';
+        }
+
+        // Collapse hamburger menu and nav-links on scroll
+        if (hamburger?.classList.contains('active') && navLinks?.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
         }
 
         lastScroll = currentScroll;
@@ -39,6 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Hamburger menu toggle logic
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function () {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
     // Dropdown functionality
     const navbars = document.querySelectorAll('.fixed-navbar, .secondary-navbar');
 
@@ -49,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const submenu = dropdown.querySelector('ul');
             let hideTimeout;
             if (submenu) {
-                dropdown.addEventListener('mouseenter', function() {
+                dropdown.addEventListener('mouseenter', function () {
                     clearTimeout(hideTimeout);
                     submenu.style.display = 'block';
                     submenu.style.pointerEvents = 'auto';
@@ -59,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 10);
                 });
 
-                dropdown.addEventListener('mouseleave', function() {
+                dropdown.addEventListener('mouseleave', function () {
                     hideTimeout = setTimeout(() => {
                         submenu.style.opacity = '0';
                         submenu.style.transform = 'translateY(-10px)';
@@ -73,7 +91,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         });
-
     });
-
 });
