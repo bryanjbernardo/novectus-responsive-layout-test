@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.querySelector('.fixed-navbar');
+    if (!navbar) return;
+
     const navLogo = document.querySelector('.nav-logo');
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -9,30 +11,26 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastScroll = 0;
     let ticking = false;
 
-    if (!navbar) return;
-
     function updateNavbar() {
         const currentScroll = window.pageYOffset;
         const shouldScroll = !isIndexPage || currentScroll > scrollThreshold;
 
-        // Toggle scrolled state
         navbar.classList.toggle('scrolled', shouldScroll);
         navLogo?.classList.toggle('shrink', shouldScroll);
 
-        // Hide the navbar on scroll down for the index page
         if (isIndexPage && !isAboutPage) {
             navbar.style.transform = currentScroll > lastScroll && currentScroll > scrollThreshold
                 ? 'translateY(-100%)'
                 : 'translateY(0)';
-        }
+            }
 
-        // Collapse hamburger menu and nav-links on scroll
-        if (hamburger?.classList.contains('active') && navLinks?.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-        }
-
-        lastScroll = currentScroll;
+            // Collapse hamburger menu and nav-links on scroll
+            if (hamburger?.classList.contains('active') && navLinks?.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+    
+            lastScroll = currentScroll;
     }
 
     // Initial check
@@ -57,6 +55,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Handle submenu toggling inside the sidebar
+    const navItems = document.querySelectorAll('.nav-links li');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+
     // Dropdown functionality
     const navbars = document.querySelectorAll('.fixed-navbar, .secondary-navbar');
 
@@ -67,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const submenu = dropdown.querySelector('ul');
             let hideTimeout;
             if (submenu) {
-                dropdown.addEventListener('mouseenter', function () {
+                dropdown.addEventListener('mouseenter', function() {
                     clearTimeout(hideTimeout);
                     submenu.style.display = 'block';
                     submenu.style.pointerEvents = 'auto';
@@ -77,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 10);
                 });
 
-                dropdown.addEventListener('mouseleave', function () {
+                dropdown.addEventListener('mouseleave', function() {
                     hideTimeout = setTimeout(() => {
                         submenu.style.opacity = '0';
                         submenu.style.transform = 'translateY(-10px)';
@@ -91,5 +97,42 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         });
+
+     // Handle click behavior for mobile devices
+    const arrows = document.querySelectorAll('.products-nav .arrow');
+
+    arrows.forEach(arrow => {
+        const submenu = arrow.closest('li').querySelector('ul');
+        let isSubmenuVisible = false;
+
+        if (submenu) {
+            arrow.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default action of the anchor (if any)
+
+                // Toggle submenu visibility
+                if (isSubmenuVisible) {
+                    submenu.style.opacity = '0';
+                    submenu.style.transform = 'translateY(-10px)';
+                    submenu.style.pointerEvents = 'none';
+                    setTimeout(() => {
+                        submenu.style.display = 'none';
+                    }, 300);
+                } else {
+                    submenu.style.display = 'block';
+                    submenu.style.pointerEvents = 'auto';
+                    setTimeout(() => {
+                        submenu.style.opacity = '1';
+                        submenu.style.transform = 'translateY(0)';
+                    }, 10);
+                }
+
+                // Toggle the state for next click
+                isSubmenuVisible = !isSubmenuVisible;
+            });
+        }
     });
+
+    });
+
 });
+

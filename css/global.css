@@ -34,6 +34,7 @@
     position: relative;
     /* width: 580px; top: 90px; left: -30px; */
     width: 480px;
+    max-width: 50vw;
     top: 6.5vh;
     left: 1.04vw;
     z-index: 100;
@@ -42,13 +43,14 @@
 .nav-logo img {
     width: 100%;
     height: auto;
-    max-width: 50vw;
+    /* max-width: 50vw; */
     object-fit: contain;
     transition: all 0.5s ease;
 }
 
 .fixed-navbar.scrolled .nav-logo {
-    left: 20px;
+    /* left: 20px; */
+    left: -40px;
     transform: translateX(0) scale(1);
     width: 220px;
     top: 5px;
@@ -212,6 +214,7 @@
         rgba(1, 142, 71, 0.05),
         rgba(141, 207, 79, 0.05)
     );
+    width: 100%;
 }
 
 .nav-links li ul,
@@ -259,6 +262,7 @@
 .nav-links li:hover .arrow {
     transform: rotate(180deg);
 }
+
 
 /* Add subtle border top to dropdown */
 .nav-links li ul::before {
@@ -389,7 +393,8 @@
     }
 
     .fixed-navbar.scrolled .nav-logo {
-    left: 20px;
+    /* left: 20px; */
+    left: 5px;
     transform: translateX(0) scale(1);
     width: 150px;
     top: 5px;
@@ -450,7 +455,7 @@
 }
 
 /* Default style for smaller screens */
-@media screen and (max-width: 768px) {
+@ media screen and (max-width: 768px) {
     .nav-links {
         display: none;
         flex-direction: column;
@@ -557,5 +562,145 @@
     .hamburger:focus span {
         background-color: #018E47; /* Change color on hover */
         transform: scale(1.1); /* Slightly enlarge */
+    }
+}
+
+
+/* For the hamburger */
+.hamburger {
+    display: block;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+@media screen and (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+.hamburger span {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #868686;
+    margin: 8px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Active hamburger animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+    background-color: #8DCF4F;
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+    background-color: #8DCF4F;
+}
+
+/* ========================================================================== 
+   SIDENAVBAR STYLES
+   ========================================================================== */
+
+/* Side navigation (initially off-screen) */
+@media screen and (max-width: 768px) {
+    .nav-links, .fixed-navbar.scrolled .nav-links {
+        scale: 1;
+        position: fixed;
+        top: 75px;
+        right: -220px; /* Offscreen on the right */
+        width: 220px;
+        height: 100svh; /* Full height of the screen */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5%;
+        padding-top: 50px;
+        margin: 0;
+        background-color: rgba(255, 255, 255, 0.9); 
+        transition: right 0.3s ease-in-out;
+
+        backdrop-filter: blur(4px);
+    }
+
+    /* Active class for opening the sidebar */
+    .nav-links.active, .fixed-navbar.scrolled .nav-links.active {
+        right: 0; /* No gap from the right edge */
+    }
+
+    /* Adjustments for the navigation items */
+    .nav-links li {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        color: #868686;
+        font-size: 1.5em;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a:focus,
+    .nav-links li a.active {
+        color: #0c914b;
+        font-weight: 300;
+    }
+
+    .nav-links li.active > ul {
+        display: block; /* Show submenu when parent is active */
+    }
+
+    /* Show the submenu in the nav */
+    .nav-links li a:focus + ul, .nav-links li a:hover + ul {
+        display: block;
+    }
+
+    /* Dropdown menu */
+    .nav-links li ul, .fixed-navbar.scrolled .nav-links li ul {
+        position: relative;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        min-width: 200px;
+        padding: 0;
+        background: rgba(255, 255, 255, 0.8); 
+        /* box-shadow: inset 0px 0px 24px rgba(0, 0, 0, 0.1); */
+        border-radius: unset;
+        box-shadow: unset;
+        backdrop-filter: blur(10px);
+        transform-origin: top;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        display: none; /* Hide submenus by default */
+    }
+
+    .nav-links li ul.active, .fixed-navbar.scrolled .nav-links li ul.active {
+        display: block; /* Show when active */
+        opacity: 1;
+    }
+
+    .nav-links li ul li a {
+        padding: 8px 20px;
+    }
+
+    .nav-links li.active .arrow {
+        transform: rotate(0deg);
+    }
+
+    .products-nav {
+        justify-content: center;
     }
 }

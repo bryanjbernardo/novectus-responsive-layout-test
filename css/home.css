@@ -293,6 +293,7 @@ html {
 .stats-section {
     /* width: 1917px;
     height: 987px; */
+    /* max-height: 100vh; */
     width: 100%;
     height: auto;
     position: relative;
@@ -343,14 +344,16 @@ html {
 .bottle-image {
     position: absolute;
     left: 23px;
-    top: 506px;
+    /* top: 506px; */
+    bottom: 0;
     width: 604px;
-    height: 602px;
+    /* height: 481px; */
+    aspect-ratio: 604/481;
     background-image: url('../assets/stats-section/bottle_edited_1.webp');
-    background-size: contain;
+    background-size:cover;
     background-repeat: no-repeat;
     mix-blend-mode: passthrough; /* Changed from multiply */
-    z-index: 1; /* Added z-index */
+    z-index: 2; /* Added z-index */
 }
 
 
@@ -359,7 +362,8 @@ html {
     left: 0px;
     top: 0;
     width: 940px;
-    height: 602px;
+    /* height: 602px; */
+    aspect-ratio: 940/602;
     background-image: url('../assets/stats-section/leaf.webp');
     background-size: contain;
     background-repeat: no-repeat;
@@ -373,7 +377,8 @@ html {
     left: 196px;
     top: 478px;
     width: 190px;
-    height: 205px;
+    /* height: 205px; */
+    aspect-ratio: 190/205;
     background-image: url('../assets/stats-section/droplet.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -386,32 +391,39 @@ html {
 /* Stats boxes container */
 .stats-boxes {
     position: relative;
-    width: 518px;
+    width: clamp(26.9vw, 518px, 80vw);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 27.84px;
-    z-index: 2;
+    gap: 1.74em;
+    z-index: 3;
 }
 
 /* Individual stat box */
 .stat-box {
-    width: 518px;
-    height: 176px;
-    background: #FFFFFF;
+    width: 100%;
+    height: 11em;
+    background: #FFF;
     border-radius: 16.53px;
-    padding: 42px 52.9px;
+    /* padding: 2.625em 3.30625em; */
+    padding: 2.625em 1.5em;
     display: flex;
     align-items: center;
+    justify-content: center;
     box-shadow: 0px 13.92px 41.76px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon-container img{
+    width: 5.8125em;
+
 }
 
 /* Stat text */
 .stat-text {
-    font-size: 28px;
+    font-size: 1.75em;
     color: #181818;
     line-height: 1.5;
-    max-width: 309px;
+    width: clamp(18vw, 309px, 80vw);
     padding-left: 9px;
 }
 
@@ -847,7 +859,7 @@ html {
 
 .israel-marker {
     top: 44%;
-    left: 33%;
+    left: 34%;
 }
 
 .austria-marker {
@@ -1077,7 +1089,7 @@ a {
     position: relative;
     flex: 0 1 calc(50% - 21px); /* Always two per row (on applicable screens)*/
     max-width: 35vw; /* Optional: Limit the maximum width for large screens */
-    aspect-ratio: 680 / 350;
+    aspect-ratio: 850 / 550;
     /* height: 32.4vh; */
     height: auto;
     
