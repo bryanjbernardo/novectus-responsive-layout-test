@@ -42,7 +42,7 @@
 .cta-title {
     height: 60px;
     color: #FFFFFF;
-    font-size: 48px;
+    font-size: 3em;
     font-weight: 700;
     text-align: center;
     line-height: 60px;
@@ -54,7 +54,7 @@
     width: 100%;
     max-width: 1105px;
     color: #FFFFFF;
-    font-size: 28px;
+    font-size: 1.75em;
     text-align: center;
     line-height: 1.25;
     margin-top: 0;
@@ -63,14 +63,15 @@
 
 .cta-button {
     width: 408px;
-    height: 92px;
+    /* height: 92px; */
+    aspect-ratio: 408/92;
     border: 3px solid #ffffff;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #FFFFFF;
-    font-size: 36px;
+    font-size: 2.25em;
     font-weight: 700;
     text-decoration: none;
    

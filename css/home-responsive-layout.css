@@ -68,7 +68,7 @@
     }
 
     .scroll-progress { 
-        right: 3vw;
+        right: 2vw;
     }
     .atlas-layer {
         background: url(../images/home-page/atlas-lower-opacity.webp) no-repeat center;
@@ -147,6 +147,31 @@
         padding-right: 20%;
     }
 
+    .partners-section {
+        padding: 8vh 4vw;
+    }
+    .partners-grid {
+        max-width: 92vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        padding: 0 3em;
+    }
+    .partner-logo {
+        padding: 0;
+        margin: 0 auto;
+        width: 12vw;
+        height: 12vw;
+    }
+    .shop-links {
+        max-width: 92vw;
+        gap: 3.5em;
+        margin-top: 3.75em;
+    }
+    .shop-link {
+        height: 2.7vw;
+    }
+
     .bottle-image {
         width: 302px;
         left: -65px;
@@ -190,6 +215,9 @@
         line-height: 1.05;
     }
     
+    #testimonials {
+        min-height: 95vh;
+    }
     .testimonials-header p {
         margin-left: 10%;
         margin-right: 10%;
@@ -203,6 +231,33 @@
     }
     .testimonial-card blockquote {
         width: 120%;
+    }
+
+    .cta-section {
+        width: 88%;
+        min-width: 75%;
+        height: 30vh;
+        max-height: 360px;
+        margin: 8.33vh auto;
+        padding: 0;
+    }
+    .cta-content {
+        padding: 0 1.5em;
+        justify-content: space-evenly;
+    }
+    .cta-title {
+        margin: 0;
+        /* width: max-content; */
+        font-size: 2.4em;
+    }
+    .cta-text {
+        margin: 0 0 1em;
+        font-size: 1.4em;
+    }
+    .cta-button {
+        max-width: 40%;
+        padding: 0;
+        font-size: 1.8em;
     }
 }
 
@@ -225,8 +280,8 @@
         width: clamp(160px, 42vw, 257.266px);
     }
     .scroll-progress { 
-        right: 2vw;
-        scale: 0.95;
+        right: 1.5vw;
+        scale: 0.9;
     }
     .atlas-layer {
         /* background-position:calc(40%); */
@@ -299,6 +354,33 @@
     }
     .map-section > p {
         padding: 0 15%;
+    }
+
+    .partners-section {
+        padding: 10vh 5.5vw;
+    }
+    .partners-grid {
+        max-width: 92vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        padding: 0 1em;
+    }
+    .partner-logo {
+        padding: 0;
+        margin: 0 auto;
+        width: 16vw;
+        height: 16vw;
+    }
+    .shop-links {
+        max-width: 84vw;
+        gap: 1.5em 2.5em;
+        margin-top: 4em;
+        flex-wrap: wrap;
+        padding: 0 1em;
+    }
+    .shop-link {
+        height: 4vw;
     }
 
     .stats-section .background-image {
@@ -375,6 +457,33 @@
         width: 120%;
     }
 
+    .cta-section {
+        width: 85%;
+        min-width: 75%;
+        height: 38vh;
+        max-height: 360px;
+        margin: 8.33vh auto;
+        padding: 0;
+    }
+    .cta-content {
+        /* width: max-content; */
+        padding: 0 1.5em;
+        justify-content: space-evenly;
+    }
+    .cta-title {
+        margin: 0;
+        max-width: 110%;
+        font-size: 2.25em;
+    }
+    .cta-text {
+        margin: 0 0 1em;
+        font-size: 1.3em;
+    }
+    .cta-button {
+        max-width: 60%;
+        padding: 0;
+        font-size: 1.7em;
+    }
 }
 
 /* General Styles for Standard and Modern Smartphones
@@ -388,7 +497,7 @@
     }
     .scroll-progress { 
         right: 1vw;
-        scale: 0.9;
+        scale: 0.8;
     }
     
     .nav-logo {
@@ -442,7 +551,7 @@
         /* Center image */
         right: 0;
     }
-
+    
     .country-name {
         display: none;
     }
@@ -572,6 +681,14 @@
     .testimonial-card img {
         max-width: 120px;
     }
+
+    .cta-section {
+        width: 80%;
+        min-width: 75%;
+        height: 42vh;
+        max-height: 300px;
+    }
+
 }
 
 /* Styles for Tiny Phones or Older/Niche Devices
@@ -590,7 +707,7 @@
 
     .scroll-progress { 
         right: 1vw;
-        scale: 0.8;
+        scale: 0.75;
     }
 
     /* Styles for very small or older phones */
@@ -668,6 +785,24 @@
     }
     .testimonial-card img {
         max-width: 112px;
+    }
+
+    .cta-section {
+        width: 80%;
+        min-width: 75%;
+        height: 45vh;
+        max-height: 260px;
+    }
+    .cta-title {
+        font-size: 2.4em;
+    }
+    .cta-text {
+        margin: 0 0 1.4em;
+        font-size: 1.4em;
+    }
+    .cta-button {
+        max-width: 62%;
+        font-size: 1.8em;
     }
 }
 

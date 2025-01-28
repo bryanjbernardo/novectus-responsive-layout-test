@@ -931,12 +931,12 @@ a {
 
 .partners-content {
     max-width: 1000px;
-    margin: 0 auto 50px;
+    margin: 0 auto 3.125em;
 }
 
 .partners-section .section-title {
     color: #019447;
-    font-size: 48px;
+    font-size: 3em;
     font-weight: 700;
     margin-bottom: 40px;
     text-align: center;
@@ -944,7 +944,7 @@ a {
 
 .partners-section .section-text {
     color: #181818;
-    font-size: 28px;
+    font-size: 1.75em;
     line-height: 1.6;
     text-align: center;
 }
